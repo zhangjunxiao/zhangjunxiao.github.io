@@ -303,13 +303,50 @@
 <li>控件的<strong>(UIControlState)4种状态</strong>：Normal、HighLighted、Disabled、Selected</li>
 <li><strong>UIAlertActionStyle的三种类型</strong>：Destructive、Default、Cancel</li>
 <li>点(Point)、像素(pixel)、Retina显示屏：1point = (n＊1piexl)＊(n＊1piexl)。n 为Retina显示屏的店放大倍数，iPhone5S（2），iPhone6S（接近3）</li>
+<li>尺寸分类</li>
+</ol>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>宽度</th>
+<th style="text-align:center">高度</th>
+<th style="text-align:right">设备及其方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>紧凑</td>
+<td style="text-align:center">紧凑</td>
+<td style="text-align:right">除iPhone6plus之后的之外的所有横屏IPhone</td>
+</tr>
+<tr>
+<td>紧凑</td>
+<td style="text-align:center">标准</td>
+<td style="text-align:right">所有竖屏的Iphone</td>
+</tr>
+<tr>
+<td>标准</td>
+<td style="text-align:center">紧凑</td>
+<td style="text-align:right">横屏iPhone6plus</td>
+</tr>
+<tr>
+<td>标准</td>
+<td style="text-align:center">标准</td>
+<td style="text-align:right">横屏和竖屏的Ipad</td>
+</tr>
+</tbody>
+</table>
+<ol>
 <li>4</li>
 <li>4</li>
-<li>4</li>
-<li>4</li>
+<li>4<blockquote>
+<ol>
 <li>4</li>
 </ol>
 </blockquote>
+</li>
+</ol>
 <h4 id="输出接口与操作方法"><a href="#输出接口与操作方法" class="headerlink" title="输出接口与操作方法"></a>输出接口与操作方法</h4><h5 id="IBOutlet"><a href="#IBOutlet" class="headerlink" title="@IBOutlet"></a>@IBOutlet</h5><p>控制器类通过输出接口来引用storyBoard或者nib文件中的对象<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@IBOutlet</span> <span class="keyword">var</span> button: <span class="type">UIButtopn</span>!</div></pre></td></tr></table></figure></p>
 <h5 id="IBAction"><a href="#IBAction" class="headerlink" title="@IBAction"></a>@IBAction</h5><p>用@IBAction 修饰的方法名为<strong>操作方法</strong>，操作方法告诉Interface Builder这个方法可以背storyboard活着nib文件中的控件触发。<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">doSomething</span><span class="params">(sender: AnyObject)</span></span>&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h4 id="所有遇到的类"><a href="#所有遇到的类" class="headerlink" title="所有遇到的类"></a>所有遇到的类</h4><blockquote>
@@ -340,7 +377,7 @@
 <li>UIAlertController</li>
 <li>UIAlertAction</li>
 <li>UIPopoverArrowDirection</li>
-<li>UIInterfaceOrientationMask 屏幕支持方法标记类</li>
+<li>UIInterfaceOrientationMask 屏幕支持方向标记类</li>
 </ul>
 </blockquote>
 
