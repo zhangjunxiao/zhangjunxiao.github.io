@@ -245,7 +245,14 @@
 <blockquote>
 <ul>
 <li>YII_DEBUG：标识应用是否运行在调试模式。当在调试模式下， 应用会保留更多日志信息，如果抛出异常，会显示详细的错误调用堆栈。 因此，调试模式主要适合在开发阶段使用，YII_DEBUG 默认值为 false。</li>
-<li>YII_ENV：标识应用运行的环境， 详情请查阅配置章节。 YII_ENV 默认值为 ‘prod’，表示应用运行在线上产品环境。</li>
+<li>YII_ENV：标识应用运行的环境， 详情请查阅配置章节。<em> YII_ENV 默认值为 ‘prod’，表示应用运行在线上产品环境.</em>你可以把 YII_ENV 定义成以下任何一种值：<blockquote>
+<ul>
+<li>prod：生产环境。常量 YII_ENV_PROD 将被看作 true。如果你没修改过，这就是 YII_ENV 的默认值。</li>
+<li>dev：开发环境。常量 YII_ENV_DEV 将被看作 true。</li>
+<li>test：测试环境。常量 YII_ENV_TEST 将被看作 true。</li>
+</ul>
+</blockquote>
+</li>
 <li>YII_ENABLE_ERROR_HANDLER：标识是否启用 Yii 提供的错误处理， 默认为 true。<br>当定义一个常量时，通常使用类似如下代码来定义：<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">defined(<span class="string">'YII_DEBUG'</span>) <span class="keyword">or</span> define(<span class="string">'YII_DEBUG'</span>, <span class="keyword">true</span>);</div></pre></td></tr></table></figure>
 </li>
 </ul>
