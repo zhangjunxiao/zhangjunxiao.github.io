@@ -113,7 +113,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Swift/" style="font-size: 20px;">Swift</a> <a href="/tags/Swift-mapkit/" style="font-size: 10px;">Swift mapkit</a> <a href="/tags/blog主题设置/" style="font-size: 10px;">blog主题设置</a>
+						<a href="/tags/Swift/" style="font-size: 20px;">Swift</a> <a href="/tags/Swift-mapkit/" style="font-size: 10px;">Swift mapkit</a> <a href="/tags/blog主题设置/" style="font-size: 10px;">blog主题设置</a> <a href="/tags/yii框架/" style="font-size: 10px;">yii框架</a>
 					</div>
 				</section>
 				
@@ -198,6 +198,78 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-yii框架入口脚本" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/31/yii框架入口脚本/" class="article-date">
+  	<time datetime="2016-08-31T01:09:00.000Z" itemprop="datePublished">2016-08-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/31/yii框架入口脚本/">入口脚本</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="入口脚本"><a href="#入口脚本" class="headerlink" title="入口脚本"></a>入口脚本</h2><p>入口脚本是应用启动流程中的第一环， 一个应用（不管是网页应用还是控制台应用）只有一个入口脚本。 终端用户的请求通过入口脚本实例化应用并将将请求转发到应用。</p>
+<p>Web 应用的入口脚本必须放在终端用户能够访问的目录下， 通常命名为 <em>index.php</em>， 也可以使用 Web 服务器能定位到的其他名称。</p>
+<p>控制台应用的入口脚本一般在应用根目录下命名为 yii（后缀为.php）， 该文件需要有执行权限， 这样用户就能通过命令 <em>./yii <route> [arguments] [options]</route></em> 来运行控制台应用。</p>
+<p>入口脚本主要完成以下工作：</p>
+<blockquote>
+<p>定义全局常量；<br>注册 Composer 自动加载器；<br>包含 Yii 类文件；<br>加载应用配置；<br>创建一个应用实例并配置;<br>调用 yii\base\Application::run() 来处理请求。<br>Web 应用</p>
+</blockquote>
+<p>以下是基础应用模版入口脚本的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"></div><div class="line">defined(&apos;YII_DEBUG&apos;) or define(&apos;YII_DEBUG&apos;, true);</div><div class="line">defined(&apos;YII_ENV&apos;) or define(&apos;YII_ENV&apos;, &apos;dev&apos;);</div><div class="line"></div><div class="line">// 注册 Composer 自动加载器</div><div class="line">require(__DIR__ . &apos;/../vendor/autoload.php&apos;);</div><div class="line"></div><div class="line">// 包含 Yii 类文件</div><div class="line">require(__DIR__ . &apos;/../vendor/yiisoft/yii2/Yii.php&apos;);</div><div class="line"></div><div class="line">// 加载应用配置</div><div class="line">$config = require(__DIR__ . &apos;/../config/web.php&apos;);</div><div class="line"></div><div class="line">// 创建、配置、运行一个应用</div><div class="line">(new yii\web\Application($config))-&gt;run();</div></pre></td></tr></table></figure></p>
+<h4 id="控制台应用"><a href="#控制台应用" class="headerlink" title="控制台应用"></a>控制台应用</h4><p>以下是一个控制台应用的入口脚本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env php</div><div class="line">&lt;?php</div><div class="line">/**</div><div class="line"> * Yii console bootstrap file.</div><div class="line"> *</div><div class="line"> * @link http://www.yiiframework.com/</div><div class="line"> * @copyright Copyright (c) 2008 Yii Software LLC</div><div class="line"> * @license http://www.yiiframework.com/license/</div><div class="line"> */</div><div class="line"></div><div class="line">defined(&apos;YII_DEBUG&apos;) or define(&apos;YII_DEBUG&apos;, true);</div><div class="line"></div><div class="line">// 注册 Composer 自动加载器</div><div class="line">require(__DIR__ . &apos;/vendor/autoload.php&apos;);</div><div class="line"></div><div class="line">// 包含 Yii 类文件</div><div class="line">require(__DIR__ . &apos;/vendor/yiisoft/yii2/Yii.php&apos;);</div><div class="line"></div><div class="line">// 加载应用配置</div><div class="line">$config = require(__DIR__ . &apos;/config/console.php&apos;);</div><div class="line"></div><div class="line">$application = new yii\console\Application($config);</div><div class="line">$exitCode = $application-&gt;run();</div><div class="line">exit($exitCode);</div></pre></td></tr></table></figure></p>
+<h4 id="定义常量"><a href="#定义常量" class="headerlink" title="定义常量"></a>定义常量</h4><p>入口脚本是定义全局常量的最好地方，Yii 支持以下三个常量：</p>
+<blockquote>
+<p>YII_DEBUG：标识应用是否运行在调试模式。当在调试模式下， 应用会保留更多日志信息，如果抛出异常，会显示详细的错误调用堆栈。 因此，调试模式主要适合在开发阶段使用，YII_DEBUG 默认值为 false。<br>YII_ENV：标识应用运行的环境， 详情请查阅配置章节。 YII_ENV 默认值为 ‘prod’，表示应用运行在线上产品环境。<br>YII_ENABLE_ERROR_HANDLER：标识是否启用 Yii 提供的错误处理， 默认为 true。<br>当定义一个常量时，通常使用类似如下代码来定义：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">defined(&apos;YII_DEBUG&apos;) or define(&apos;YII_DEBUG&apos;, true);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>上面的代码等同于:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if (!defined(&apos;YII_DEBUG&apos;)) &#123;</div><div class="line">    define(&apos;YII_DEBUG&apos;, true);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>显然第一段代码更加简洁易懂。</p>
+<p>常量定义应该在入口脚本的开头，这样包含其他 PHP 文件时， 常量就能生效。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/yii框架/">yii框架</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-zjx-md" class="article article-type-post" itemscope itemprop="blogPost">
   
