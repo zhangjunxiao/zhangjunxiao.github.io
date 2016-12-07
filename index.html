@@ -113,7 +113,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Swift/" style="font-size: 20px;">Swift</a> <a href="/tags/Swift-mapkit/" style="font-size: 10px;">Swift mapkit</a> <a href="/tags/blog主题设置/" style="font-size: 10px;">blog主题设置</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/yii框架/" style="font-size: 20px;">yii框架</a> <a href="/tags/芒果的个人信息/" style="font-size: 10px;">芒果的个人信息</a>
+						<a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Swift/" style="font-size: 20px;">Swift</a> <a href="/tags/Swift-mapkit/" style="font-size: 10px;">Swift mapkit</a> <a href="/tags/blog主题设置/" style="font-size: 10px;">blog主题设置</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/yii框架/" style="font-size: 20px;">yii框架</a> <a href="/tags/芒果的个人信息/" style="font-size: 10px;">芒果的个人信息</a>
 					</div>
 				</section>
 				
@@ -198,6 +198,68 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-mac-php多版本-命令行版本与服务器-phpino-版本不符合" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/07/mac-php多版本-命令行版本与服务器-phpino-版本不符合/" class="article-date">
+  	<time datetime="2016-12-07T03:42:18.000Z" itemprop="datePublished">2016-12-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/07/mac-php多版本-命令行版本与服务器-phpino-版本不符合/">mac php多版本  命令行版本与服务器 phpino() 版本不符合 </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p> terminal 运行 php -v 获取版本号如下<br> PHP 7.1.0 (cli) (built: Dec  2 2016 09:19:56) ( NTS )<br>Copyright (c) 1997-2016 The PHP Group<br>Zend Engine v3.1.0-dev, Copyright (c) 1998-2016 Zend Technologies<br>    with Zend OPcache v7.1.0, Copyright (c) 1999-2016, by Zend Technologies<br>nginx+php-fpm 输出 phpinfo()<br>获取信息如下：<br>PHP Version 5.6.19</p>
+<h3 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h3><p>php-fpm  脚本执行的PHP 是 /usr/bin/php<br>命令行脚本 执行的 PHP 因为在配置文件 ~/.profile 中配置了<br>export PATH=/usr/local/php5/bin:$PATH<br>所以 执行的PHP 是 usr/local/php5</p>
+<p>修改 /usr/local/run/php-fpm</p>
+<p>prefix=/usr/local/php</p>
+<p>改为</p>
+<p>prefix=/usr/local/php5</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-python-日期时间" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -951,74 +1013,6 @@
     <div class="article-info article-info-index">
       
       
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-设置blog主题－cover" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/25/设置blog主题－cover/" class="article-date">
-  	<time datetime="2016-05-25T10:58:00.000Z" itemprop="datePublished">2016-05-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/25/设置blog主题－cover/">设置blog主题－cover</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h1><blockquote>
-<ul>
-<li>Dynamically-resized facebook-like cover photo displayed on index page, backed by Anystretch.</li>
-<li>Mobile-optimized by using Twitter bootstrap.<br>Dynamically-fixed nav-bar design.</li>
-<li>Beautiful profile design with logo, social site links.</li>
-<li>Duoshuo comment widget and Jiathis share widget integrated (CSS-hack involved!), friendly for Chinese users.</li>
-<li>Newer and older posts pagination support.</li>
-</ul>
-</blockquote>
-<h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><p>Execute the following command and modify theme in _config.yml to cover.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd your-hexo-dir</div><div class="line">git clone https://github.com/daisygao/hexo-themes-cover.git themes/cover</div></pre></td></tr></table></figure></p>
-<h1 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h1><p>Execute the following command to update new.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd themes/cover</div><div class="line">git pull</div></pre></td></tr></table></figure></p>
-<h1 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h1><p>Default config:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">menu:</div><div class="line">  Home: /</div><div class="line">  Archives: /archives</div><div class="line"></div><div class="line">widgets:</div><div class="line">- search</div><div class="line"></div><div class="line">cover:</div><div class="line">  enable: true</div><div class="line">  url: http://ww1.sinaimg.cn/large/6cea169fjw1edgyzma1xcj21kw16ohba.jpg</div><div class="line"></div><div class="line">excerpt_link: Read More</div><div class="line"></div><div class="line">full_format: &apos;ddd, MMM D YYYY, h:mm:ss a&apos;</div><div class="line"></div><div class="line">addthis:</div><div class="line">  enable: true</div><div class="line">  pubid:</div><div class="line">  facebook:</div><div class="line">  twitter:</div><div class="line">  google: true</div><div class="line">  pinterest:</div><div class="line"></div><div class="line">fancybox: true</div><div class="line"></div><div class="line">google_analytics: UA-36877105-X</div><div class="line">rss:</div><div class="line"></div><div class="line">comment_provider: duoshuo</div><div class="line"></div><div class="line"></div><div class="line"># Duoshuo comment</div><div class="line">duoshuo:</div><div class="line">  short_name: your_name</div><div class="line"></div><div class="line">social:</div><div class="line">  github: https://github.com/your_name</div><div class="line">  weibo: http://weibo.com/your_name</div><div class="line"></div><div class="line"></div><div class="line">auto_change:</div><div class="line">  enable: true</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog主题设置/">blog主题设置</a></li></ul>
-	</div>
-
       
 
       
