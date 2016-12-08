@@ -4,18 +4,14 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>mac php多版本  命令行版本与服务器 phpino() 版本不符合  | 张俊啸的博客</title>
+  <title>Tag: 命令行 | 张俊啸的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题描述 terminal 运行 php -v 获取版本号如下 PHP 7.1.0 (cli) (built: Dec  2 2016 09:19:56) ( NTS )Copyright (c) 1997-2016 The PHP GroupZend Engine v3.1.0-dev, Copyright (c) 1998-2016 Zend Technologies    with Zend">
-<meta property="og:type" content="article">
-<meta property="og:title" content="mac php多版本  命令行版本与服务器 phpino() 版本不符合 ">
-<meta property="og:url" content="http://zhangjunxiao.github.io.git/2016/12/07/mac-php多版本-命令行版本与服务器-phpino-版本不符合/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="张俊啸的博客">
+<meta property="og:url" content="http://zhangjunxiao.github.io.git/tags/命令行/index.html">
 <meta property="og:site_name" content="张俊啸的博客">
-<meta property="og:description" content="问题描述 terminal 运行 php -v 获取版本号如下 PHP 7.1.0 (cli) (built: Dec  2 2016 09:19:56) ( NTS )Copyright (c) 1997-2016 The PHP GroupZend Engine v3.1.0-dev, Copyright (c) 1998-2016 Zend Technologies    with Zend">
-<meta property="og:updated_time" content="2016-12-07T03:54:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mac php多版本  命令行版本与服务器 phpino() 版本不符合 ">
-<meta name="twitter:description" content="问题描述 terminal 运行 php -v 获取版本号如下 PHP 7.1.0 (cli) (built: Dec  2 2016 09:19:56) ( NTS )Copyright (c) 1997-2016 The PHP GroupZend Engine v3.1.0-dev, Copyright (c) 1998-2016 Zend Technologies    with Zend">
+<meta name="twitter:title" content="张俊啸的博客">
   
     <link rel="alternative" href="/atom.xml" title="张俊啸的博客" type="application/atom+xml">
   
@@ -201,123 +197,53 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-mac-php多版本-命令行版本与服务器-phpino-版本不符合" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/2016/12/07/mac-php多版本-命令行版本与服务器-phpino-版本不符合/" class="article-date">
-  	<time datetime="2016-12-07T03:42:18.000Z" itemprop="datePublished">2016-12-07</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2016/12/08/mac-下查看端口占用/" class="archive-article-date">
+  	<time datetime="2016-12-08T00:13:41.000Z" itemprop="datePublished">Dec 8</time>
 </a>
-    </div>
+        </div>
+    	 
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      mac php多版本  命令行版本与服务器 phpino() 版本不符合 
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/12/08/mac-下查看端口占用/">mac 下查看端口占用</a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命令行/">命令行</a></li></ul>
 	</div>
 
-        
+          
 
+        </div>
         <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p> terminal 运行 php -v 获取版本号如下<br> PHP 7.1.0 (cli) (built: Dec  2 2016 09:19:56) ( NTS )<br>Copyright (c) 1997-2016 The PHP Group<br>Zend Engine v3.1.0-dev, Copyright (c) 1998-2016 Zend Technologies<br>    with Zend OPcache v7.1.0, Copyright (c) 1999-2016, by Zend Technologies<br>nginx+php-fpm 输出 phpinfo()<br>获取信息如下：<br>PHP Version 5.6.19</p>
-<h3 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h3><p>php-fpm  脚本执行的PHP 是 /usr/bin/php<br>命令行脚本 执行的 PHP 因为在配置文件 ~/.profile 中配置了<br>export PATH=/usr/local/php5/bin:$PATH<br>所以 执行的PHP 是 usr/local/php5</p>
-<p>修改 /usr/local/run/php-fpm</p>
-<p>prefix=/usr/local/php</p>
-<p>改为</p>
-<p>prefix=/usr/local/php5</p>
-
-      
-    </div>
-    
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2016/12/08/mac-下查看端口占用/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          mac 下查看端口占用
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2016/11/16/python-日期时间/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">python 日期时间</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
 
-
-<div class="share_jia">
-	<!-- JiaThis Button BEGIN -->
-	<div class="jiathis_style">
-		<span class="jiathis_txt">Share to: &nbsp; </span>
-		<a class="jiathis_button_facebook"></a> 
-    <a class="jiathis_button_twitter"></a>
-    <a class="jiathis_button_plus"></a> 
-    <a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_cqq"></a>
-		<a class="jiathis_button_douban"></a>
-		<a class="jiathis_button_weixin"></a>
-		<a class="jiathis_button_tumblr"></a>
-    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	</div>
-	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
-</div>
-
-
-
-
-
-
-<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="mac-php多版本-命令行版本与服务器-phpino-版本不符合" data-title="mac php多版本  命令行版本与服务器 phpino() 版本不符合 " data-url="http://zhangjunxiao.github.io.git/2016/12/07/mac-php多版本-命令行版本与服务器-phpino-版本不符合/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-
-
+    
 
 </div>
       <footer id="footer">
@@ -343,9 +269,9 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false
 	}
