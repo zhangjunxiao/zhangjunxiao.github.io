@@ -113,7 +113,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Swift/" style="font-size: 20px;">Swift</a> <a href="/tags/Swift-mapkit/" style="font-size: 10px;">Swift mapkit</a> <a href="/tags/blog主题设置/" style="font-size: 10px;">blog主题设置</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/yii框架/" style="font-size: 20px;">yii框架</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/芒果的个人信息/" style="font-size: 10px;">芒果的个人信息</a>
+						<a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Swift/" style="font-size: 20px;">Swift</a> <a href="/tags/Swift-mapkit/" style="font-size: 10px;">Swift mapkit</a> <a href="/tags/blog主题设置/" style="font-size: 10px;">blog主题设置</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/yii框架/" style="font-size: 20px;">yii框架</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/芒果的个人信息/" style="font-size: 10px;">芒果的个人信息</a>
 					</div>
 				</section>
 				
@@ -198,6 +198,75 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-用户界面——各种容器及组件的设置方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/18/用户界面——各种容器及组件的设置方法/" class="article-date">
+  	<time datetime="2016-06-17T20:21:34.000Z" itemprop="datePublished">2016-06-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/18/用户界面——各种容器及组件的设置方法/">用户界面——各种容器及组件的设置方法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="关闭键盘"><a href="#关闭键盘" class="headerlink" title="关闭键盘"></a>关闭键盘</h2><h3 id="1-按下键盘上的Done按钮关闭键盘"><a href="#1-按下键盘上的Done按钮关闭键盘" class="headerlink" title="1. 按下键盘上的Done按钮关闭键盘"></a>1. 按下键盘上的Done按钮关闭键盘</h3><blockquote>
+<ol>
+<li>用户按下键盘上的Done按钮的时，会产生一个<em>Did End On Exit</em> 事件，此时需要让文本框交出控制权，以关闭键盘</li>
+<li>将键盘的Did End On Exit 事件关联到下方的方法上</li>
+</ol>
+<p>Swift:<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">  <span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">textFieldDoneEditing</span><span class="params">(sender: UITextField)</span></span>&#123;</div><div class="line">  sender.resignFristResponder()</div><div class="line">  &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
+<p>Objc<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">  -(IBAction)textFieldEDoneEditing:(id)sender&#123;</div><div class="line">  [sender resignFirstResponder];</div><div class="line">  &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="2-触摸背景关闭键盘"><a href="#2-触摸背景关闭键盘" class="headerlink" title="2. 触摸背景关闭键盘"></a>2. 触摸背景关闭键盘</h3><blockquote>
+<ol>
+<li>用户触摸背景时，会出发<em>Touch Down</em>事件，此时需要让文本框或者数字框交出控制权，以关闭键盘</li>
+<li>将键盘的Did End On Exit 事件关联到下方的方法上</li>
+</ol>
+<p>Swift:<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">  <span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">backgroundTap</span><span class="params">(sender: UITextField)</span></span>&#123;</div><div class="line">    <span class="comment">//  此时的sender 是 UIControl</span></div><div class="line">    nameField.resignFristResponder()</div><div class="line">    numberField.resignFristResponder()</div><div class="line">    &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
+<p>Objc<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">  -(IBAction)textFieldEDoneEditing:(id)sender&#123;</div><div class="line">  [self.nameField resignFirstResponder];</div><div class="line">  [self.numberField resignFirstResponder];</div><div class="line">  &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="实现操作表单-action-sheet-和警告视图-alert"><a href="#实现操作表单-action-sheet-和警告视图-alert" class="headerlink" title="实现操作表单(action sheet)和警告视图(alert)"></a>实现操作表单(action sheet)和警告视图(alert)</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">buttonPressed</span><span class="params">(sender: UIButton)</span></span>&#123;</div><div class="line">  <span class="keyword">let</span> controller = <span class="type">UIAlertController</span>(title: <span class="string">"Are you sure?"</span>,message: <span class="literal">nil</span>,preferedStyle: .<span class="type">ActionSheet</span>)</div><div class="line"></div><div class="line">  <span class="keyword">let</span> yesACtion = <span class="type">UIAlertAction</span>(title: <span class="string">"yes,I`m sure"</span>,style: .<span class="type">Desturction</span>,handler: &#123; action <span class="keyword">in</span></div><div class="line">    <span class="keyword">let</span> msg = <span class="keyword">self</span>.nameField.text.isEmpty ? <span class="string">"you can breathe easy"</span> : <span class="string">"OK"</span></div><div class="line">    <span class="keyword">let</span> controller2 = <span class="type">UIAlertController</span>(title: <span class="string">"Done"</span>,message: mag,preferedStyle: .<span class="type">Alert</span>)</div><div class="line">    <span class="keyword">let</span> cancelAction = <span class="type">UIAlertAction</span>(title: <span class="string">"cancel"</span>,style: .<span class="type">Cancel</span>,handle: <span class="literal">nil</span>)</div><div class="line">    controller2.addAction(cancelAction)</div><div class="line"></div><div class="line">    <span class="keyword">self</span>.presentViewController(controller2,animated: <span class="literal">true</span>,completion: <span class="literal">nil</span>)</div><div class="line">  &#125;)</div><div class="line"></div><div class="line">  <span class="keyword">let</span> noAction = <span class="type">UIAlertAction</span>(title: <span class="string">"no"</span>,style: .<span class="type">Cancel</span>,handle: <span class="literal">nil</span>)</div><div class="line">  controller.addAction(yesACtion)</div><div class="line">  controller.addAction(noAction)</div><div class="line"></div><div class="line">    <span class="keyword">self</span>.presentViewController(controller,animated: <span class="literal">true</span>,completion: <span class="literal">nil</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-Swift语法——扩展-Extension" class="article article-type-post" itemscope itemprop="blogPost">
   
