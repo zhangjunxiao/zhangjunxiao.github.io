@@ -4,14 +4,24 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives | 张俊啸的博客</title>
+  <title>php 报错级别设置 屏蔽notice 基本  | 张俊啸的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="张俊啸的博客">
-<meta property="og:url" content="http://zhangjunxiao.github.io.git/archives/page/2/index.html">
+  <meta name="description" content="报错级别设置常规设置： 输出phpinfo() 查看 php.ini 的路径/usr/local/php5/lib/php.ini
+修改 error_reporting默认 error_reporting = E_ALL改为  error_reporting = E_ALL &amp;amp; ～ E_NOTICE
+修改 log_error = On退出 vi/usr/local/run/php-fpm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php 报错级别设置 屏蔽notice 基本 ">
+<meta property="og:url" content="http://zhangjunxiao.github.io.git/2016/12/09/php-报错级别设置-屏蔽notice-基本/index.html">
 <meta property="og:site_name" content="张俊啸的博客">
+<meta property="og:description" content="报错级别设置常规设置： 输出phpinfo() 查看 php.ini 的路径/usr/local/php5/lib/php.ini
+修改 error_reporting默认 error_reporting = E_ALL改为  error_reporting = E_ALL &amp;amp; ～ E_NOTICE
+修改 log_error = On退出 vi/usr/local/run/php-fpm">
+<meta property="og:updated_time" content="2016-12-09T02:53:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="张俊啸的博客">
+<meta name="twitter:title" content="php 报错级别设置 屏蔽notice 基本 ">
+<meta name="twitter:description" content="报错级别设置常规设置： 输出phpinfo() 查看 php.ini 的路径/usr/local/php5/lib/php.ini
+修改 error_reporting默认 error_reporting = E_ALL改为  error_reporting = E_ALL &amp;amp; ～ E_NOTICE
+修改 log_error = On退出 vi/usr/local/run/php-fpm">
   
     <link rel="alternative" href="/atom.xml" title="张俊啸的博客" type="application/atom+xml">
   
@@ -197,169 +207,128 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-php-报错级别设置-屏蔽notice-基本" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/07/08/知识汇总/" class="archive-article-date">
-  	<time datetime="2016-07-08T15:45:36.000Z" itemprop="datePublished">Jul 8</time>
+    <div class="article-meta">
+      <a href="/2016/12/09/php-报错级别设置-屏蔽notice-基本/" class="article-date">
+  	<time datetime="2016-12-09T02:40:43.000Z" itemprop="datePublished">2016-12-09</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/08/知识汇总/">知识点汇总</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      php 报错级别设置 屏蔽notice 基本 
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swift/">Swift</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="报错级别设置"><a href="#报错级别设置" class="headerlink" title="报错级别设置"></a>报错级别设置</h3><p>常规设置： 输出phpinfo() 查看 php.ini 的路径<br>/usr/local/php5/lib/php.ini</p>
+<p>修改 error_reporting<br>默认 error_reporting = E_ALL<br>改为  error_reporting = E_ALL &amp; ～ E_NOTICE</p>
+<p>修改 log_error = On<br>退出 vi<br>/usr/local/run/php-fpm reload</p>
+<p>输出phpinfo()<br>error_reporting 值依旧未变</p>
+<p>错误原因</p>
+<ol>
+<li><p>搜索了下，发现有人说当log_errors开启时，如果error_log的路径不对，会导致报错显示，php-fpm 运行的用户：组 对error_log的路径 无读写权限时，依旧会输出所有错误</p>
+</li>
+<li><p>/usr/local/php5/etc/php-fpm.conf</p>
+<blockquote>
+<p>; Additional php.ini defines, specific to this pool of workers. These settings<br>; overwrite the values previously defined in the php.ini. The directives are the<br>; same as the PHP SAPI:<br>;   php_value/php_flag             - you can set classic ini defines which can<br>;                                    be overwritten from PHP call ‘ini_set’.<br>;   php_admin_value/php_admin_flag - these directives won’t be overwritten by<br>;                                     PHP call ‘ini<em>set’<br>; For php</em>*flag, valid values are on, off, 1, 0, true, false, yes or no.</p>
+</blockquote>
+</li>
+</ol>
+<p>; Defining ‘extension’ will load the corresponding shared extension from<br>; extension_dir. Defining ‘disable_functions’ or ‘disable_classes’ will not<br>; overwrite previously defined php.ini values, but will append the new value<br>; instead.</p>
+<p>; Note: path INI options can be relative and will be expanded with the prefix<br>; (pool, global or /usr/local/php5)</p>
+<p>; Default Value: nothing is defined by default except the values in php.ini and<br>;                specified at startup with the -d argument<br>;php_admin_value[sendmail_path] = /usr/sbin/sendmail -t -i -f www@my.domain.com<br>;php_flag[display_errors] = On<br>php_admin_value[error_log] = /usr/local/php5/var/log/php_error.log<br>;php_admin_flag[log_errors] = On<br>;php_admin_value[memory_limit] = 32M<br>php_admin_value[error_reporting] = 22519</p>
+<blockquote>
+<p>这边的设置会强制覆盖 php.ini 的设置  所以可以强制 在这里设置想要的值</p>
+</blockquote>
+
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/08/python-os模块help/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python os模块help()</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/18/用户界面——各种容器及组件的设置方法/" class="archive-article-date">
-  	<time datetime="2016-06-17T20:21:34.000Z" itemprop="datePublished">Jun 18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/18/用户界面——各种容器及组件的设置方法/">用户界面——各种容器及组件的设置方法</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/05/30/Swift语法——扩展-Extension/" class="archive-article-date">
-  	<time datetime="2016-05-30T03:58:38.000Z" itemprop="datePublished">May 30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/05/30/Swift语法——扩展-Extension/">Swift语法——扩展(Extension)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/05/25/设置blog主题－cover/" class="archive-article-date">
-  	<time datetime="2016-05-25T10:58:00.000Z" itemprop="datePublished">May 25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/05/25/设置blog主题－cover/">设置blog主题－cover</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog主题设置/">blog主题设置</a></li></ul>
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/05/25/hello-world/" class="archive-article-date">
-  	<time datetime="2016-05-25T05:09:00.000Z" itemprop="datePublished">May 25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/05/25/hello-world/">hello world</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
-  
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="php-报错级别设置-屏蔽notice-基本" data-title="php 报错级别设置 屏蔽notice 基本 " data-url="http://zhangjunxiao.github.io.git/2016/12/09/php-报错级别设置-屏蔽notice-基本/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 </div>
       <footer id="footer">
@@ -385,8 +354,8 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false
