@@ -236,12 +236,12 @@
 <li><p>/usr/local/php5/etc/php-fpm.conf</p>
 <blockquote>
 <p>; Additional php.ini defines, specific to this pool of workers. These settings<br>; overwrite the values previously defined in the php.ini. The directives are the<br>; same as the PHP SAPI:<br>;   php_value/php_flag             - you can set classic ini defines which can<br>;                                    be overwritten from PHP call ‘ini_set’.<br>;   php_admin_value/php_admin_flag - these directives won’t be overwritten by<br>;                                     PHP call ‘ini<em>set’<br>; For php</em>*flag, valid values are on, off, 1, 0, true, false, yes or no.</p>
-</blockquote>
-</li>
-</ol>
 <p>; Defining ‘extension’ will load the corresponding shared extension from<br>; extension_dir. Defining ‘disable_functions’ or ‘disable_classes’ will not<br>; overwrite previously defined php.ini values, but will append the new value<br>; instead.</p>
 <p>; Note: path INI options can be relative and will be expanded with the prefix<br>; (pool, global or /usr/local/php5)</p>
 <p>; Default Value: nothing is defined by default except the values in php.ini and<br>;                specified at startup with the -d argument<br>;php_admin_value[sendmail_path] = /usr/sbin/sendmail -t -i -f www@my.domain.com<br>;php_flag[display_errors] = On<br>php_admin_value[error_log] = /usr/local/php5/var/log/php_error.log<br>;php_admin_flag[log_errors] = On<br>;php_admin_value[memory_limit] = 32M<br>php_admin_value[error_reporting] = 22519</p>
+</blockquote>
+</li>
+</ol>
 <blockquote>
 <p>这边的设置会强制覆盖 php.ini 的设置  所以可以强制 在这里设置想要的值</p>
 </blockquote>
