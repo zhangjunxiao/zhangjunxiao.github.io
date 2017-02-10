@@ -113,7 +113,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/NFC/" style="font-size: 10px;">NFC</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/Swift/" style="font-size: 20px;">Swift</a> <a href="/tags/Swift-mapkit/" style="font-size: 10px;">Swift mapkit</a> <a href="/tags/blog主题设置/" style="font-size: 10px;">blog主题设置</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/yii框架/" style="font-size: 20px;">yii框架</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/芒果的个人信息/" style="font-size: 10px;">芒果的个人信息</a>
+						<a href="/tags/NFC/" style="font-size: 10px;">NFC</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Swift/" style="font-size: 15px;">Swift</a> <a href="/tags/Swift-mapkit/" style="font-size: 10px;">Swift mapkit</a> <a href="/tags/blog主题设置/" style="font-size: 10px;">blog主题设置</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/yii框架/" style="font-size: 15px;">yii框架</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/芒果的个人信息/" style="font-size: 10px;">芒果的个人信息</a>
 					</div>
 				</section>
 				
@@ -198,6 +198,194 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-yii框架配置" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/31/yii框架配置/" class="article-date">
+  	<time datetime="2016-08-31T01:34:41.000Z" itemprop="datePublished">2016-08-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/31/yii框架配置/">配置</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>在 Yii 中，创建新对象和初始化已存在对象时广泛使用配置。配置通常包含被创建对象的类名和一组将要赋值给对象属性的初始值。还可能包含一组将被附加到对象事件上的句柄。和一组将被附加到对象上的行为。</p>
+<p>以下代码中的配置被用来创建并初始化一个数据库连接：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$config = [</div><div class="line">    <span class="string">'class'</span> =&gt; <span class="string">'yii\db\Connection'</span>,</div><div class="line">    <span class="string">'dsn'</span> =&gt; <span class="string">'mysql:host=127.0.0.1;dbname=demo'</span>,</div><div class="line">    <span class="string">'username'</span> =&gt; <span class="string">'root'</span>,</div><div class="line">    <span class="string">'password'</span> =&gt; <span class="string">''</span>,</div><div class="line">    <span class="string">'charset'</span> =&gt; <span class="string">'utf8'</span>,</div><div class="line">];</div><div class="line"></div><div class="line">$db = Yii::createObject($config);</div></pre></td></tr></table></figure></p>
+<p><em>Yii::createObject()</em> 方法接受一个配置数组并根据数组中指定的类名创建对象。对象实例化后，剩余的参数被用来初始化对象的属性，事件处理和行为。</p>
+<p>对于已存在的对象，可以使用 <em>Yii::configure()</em> 方法根据配置去初始化其属性，就像这样：</p>
+<p><em>Yii::configure($object, $config);</em><br>请注意，如果配置一个已存在的对象，那么配置数组中不应该包含指定类名的 class 元素。</p>
+<p>配置的格式</p>
+<p>一个配置的格式可以描述为以下形式：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">    <span class="string">'class'</span> =&gt; <span class="string">'ClassName'</span>,</div><div class="line">    <span class="string">'propertyName'</span> =&gt; <span class="string">'propertyValue'</span>,</div><div class="line">    <span class="string">'on eventName'</span> =&gt; $eventHandler,</div><div class="line">    <span class="string">'as behaviorName'</span> =&gt; $behaviorConfig,</div><div class="line">]</div></pre></td></tr></table></figure></p>
+<p>其中</p>
+<blockquote>
+<ul>
+<li>class 元素指定了将要创建的对象的完全限定类名。</li>
+<li>propertyName 元素指定了对象属性的初始值。键名是属性名，值是该属性对应的初始值。只有公共成员变量以及通过 getter/setter 定义的属性可以被配置。</li>
+<li>on eventName 元素指定了附加到对象事件上的句柄是什么。请注意，数组的键名由 on 前缀加事件名组成。请参考事件章节了解事件句柄格式。</li>
+<li>as behaviorName 元素指定了附加到对象的行为。请注意，数组的键名由 as 前缀加行为名组成。$behaviorConfig 值表示创建行为的配置信息，格式与我们之前描述的配置格式一样。<br>下面是一个配置了初始化属性值，事件句柄和行为的示例：<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">    <span class="string">'class'</span> =&gt; <span class="string">'app\components\SearchEngine'</span>,</div><div class="line">    <span class="string">'apiKey'</span> =&gt; <span class="string">'xxxxxxxx'</span>,</div><div class="line">    <span class="string">'on search'</span> =&gt; <span class="function"><span class="keyword">function</span> <span class="params">($event)</span> </span>&#123;</div><div class="line">        Yii::info(<span class="string">"搜索的关键词： "</span> . $event-&gt;keyword);</div><div class="line">    &#125;,</div><div class="line">    <span class="string">'as indexer'</span> =&gt; [</div><div class="line">        <span class="string">'class'</span> =&gt; <span class="string">'app\components\IndexerBehavior'</span>,</div><div class="line">        <span class="comment">// ... 初始化属性值 ...</span></div><div class="line">    ],</div><div class="line">]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h4 id="使用配置"><a href="#使用配置" class="headerlink" title="使用配置"></a>使用配置</h4><p>Yii 中的配置可以用在很多场景。本章开头我们展示了如何使用 Yii::creatObject() 根据配置信息创建对象。本小节将介绍配置的两种主要用法 —— <em>配置应用与配置小部件</em>。</p>
+<h4 id="应用的配置"><a href="#应用的配置" class="headerlink" title="应用的配置"></a>应用的配置</h4><p>应用的配置可能是最复杂的配置之一。因为 <em><strong>yii\web\Application</strong></em>类拥有很多可配置的属性和事件。更重要的是它的 <em>yii\web\Application::components</em> 属性可以接收配置数组并通过应用注册为组件。以下是一个针对基础应用模板的应用配置概要：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">$config = [</div><div class="line">    <span class="string">'id'</span> =&gt; <span class="string">'basic'</span>,</div><div class="line">    <span class="string">'basePath'</span> =&gt; dirname(<span class="keyword">__DIR__</span>),</div><div class="line">    <span class="string">'extensions'</span> =&gt; <span class="keyword">require</span>(<span class="keyword">__DIR__</span> . <span class="string">'/../vendor/yiisoft/extensions.php'</span>),</div><div class="line">    <span class="string">'components'</span> =&gt; [</div><div class="line">        <span class="string">'cache'</span> =&gt; [</div><div class="line">            <span class="string">'class'</span> =&gt; <span class="string">'yii\caching\FileCache'</span>,</div><div class="line">        ],</div><div class="line">        <span class="string">'mailer'</span> =&gt; [</div><div class="line">            <span class="string">'class'</span> =&gt; <span class="string">'yii\swiftmailer\Mailer'</span>,</div><div class="line">        ],</div><div class="line">        <span class="string">'log'</span> =&gt; [</div><div class="line">            <span class="string">'class'</span> =&gt; <span class="string">'yii\log\Dispatcher'</span>,</div><div class="line">            <span class="string">'traceLevel'</span> =&gt; YII_DEBUG ? <span class="number">3</span> : <span class="number">0</span>,</div><div class="line">            <span class="string">'targets'</span> =&gt; [</div><div class="line">                [</div><div class="line">                    <span class="string">'class'</span> =&gt; <span class="string">'yii\log\FileTarget'</span>,</div><div class="line">                ],</div><div class="line">            ],</div><div class="line">        ],</div><div class="line">        <span class="string">'db'</span> =&gt; [</div><div class="line">            <span class="string">'class'</span> =&gt; <span class="string">'yii\db\Connection'</span>,</div><div class="line">            <span class="string">'dsn'</span> =&gt; <span class="string">'mysql:host=localhost;dbname=stay2'</span>,</div><div class="line">            <span class="string">'username'</span> =&gt; <span class="string">'root'</span>,</div><div class="line">            <span class="string">'password'</span> =&gt; <span class="string">''</span>,</div><div class="line">            <span class="string">'charset'</span> =&gt; <span class="string">'utf8'</span>,</div><div class="line">        ],</div><div class="line">    ],</div><div class="line">];</div></pre></td></tr></table></figure></p>
+<p>配置中没有 class 键的原因是这段配置应用在下面的入口脚本中，类名已经指定了。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(<span class="keyword">new</span> yii\web\Application($config))-&gt;run();</div></pre></td></tr></table></figure></p>
+<p>更多关于应用 components 属性配置的信息可以查阅<strong>应用以及服务定位器</strong>章节。</p>
+<h4 id="小部件的配置"><a href="#小部件的配置" class="headerlink" title="小部件的配置"></a>小部件的配置</h4><p>使用小部件时，常常需要配置以便自定义其属性。 <em>yii\base\Widget::widget()</em> 和 <em>yii\base\Widget::begin()</em> 方法都可以用来创建小部件。它们可以接受配置数组：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">use</span> <span class="title">yii</span>\<span class="title">widgets</span>\<span class="title">Menu</span>;</div><div class="line"></div><div class="line"><span class="keyword">echo</span> Menu::widget([</div><div class="line">    <span class="string">'activateItems'</span> =&gt; <span class="keyword">false</span>,</div><div class="line">    <span class="string">'items'</span> =&gt; [</div><div class="line">        [<span class="string">'label'</span> =&gt; <span class="string">'Home'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'site/index'</span>]],</div><div class="line">        [<span class="string">'label'</span> =&gt; <span class="string">'Products'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'product/index'</span>]],</div><div class="line">        [<span class="string">'label'</span> =&gt; <span class="string">'Login'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'site/login'</span>], <span class="string">'visible'</span> =&gt; Yii::$app-&gt;user-&gt;isGuest],</div><div class="line">    ],</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+<p>上述代码创建了一个小部件 Menu 并将其 activateItems 属性初始化为 false。item 属性也配置成了将要显示的菜单条目。</p>
+<p>请注意，代码中已经给出了类名 <em>yii\widgets\Menu</em>，配置数组<strong>不应该</strong>再包含 class` 键。</p>
+<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><p>当配置的内容十分复杂，通用做法是将其存储在一或多个 PHP 文件中，这些文件被称为配置文件。一个配置文件返回的是 PHP 数组。例如，像这样把应用配置信息存储在名为 web.php 的文件中：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">return</span> [</div><div class="line">    <span class="string">'id'</span> =&gt; <span class="string">'basic'</span>,</div><div class="line">    <span class="string">'basePath'</span> =&gt; dirname(<span class="keyword">__DIR__</span>),</div><div class="line">    <span class="string">'extensions'</span> =&gt; <span class="keyword">require</span>(<span class="keyword">__DIR__</span> . <span class="string">'/../vendor/yiisoft/extensions.php'</span>),</div><div class="line">    <span class="string">'components'</span> =&gt; <span class="keyword">require</span>(<span class="keyword">__DIR__</span> . <span class="string">'/components.php'</span>),</div><div class="line">];</div></pre></td></tr></table></figure></p>
+<p>鉴于 components 配置也很复杂，上述代码把它们存储在单独的 components.php 文件中，并且包含在 web.php 里。components.php 的内容如下：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">return</span> [</div><div class="line">    <span class="string">'cache'</span> =&gt; [</div><div class="line">        <span class="string">'class'</span> =&gt; <span class="string">'yii\caching\FileCache'</span>,</div><div class="line">    ],</div><div class="line">    <span class="string">'mailer'</span> =&gt; [</div><div class="line">        <span class="string">'class'</span> =&gt; <span class="string">'yii\swiftmailer\Mailer'</span>,</div><div class="line">    ],</div><div class="line">    <span class="string">'log'</span> =&gt; [</div><div class="line">        <span class="string">'class'</span> =&gt; <span class="string">'yii\log\Dispatcher'</span>,</div><div class="line">        <span class="string">'traceLevel'</span> =&gt; YII_DEBUG ? <span class="number">3</span> : <span class="number">0</span>,</div><div class="line">        <span class="string">'targets'</span> =&gt; [</div><div class="line">            [</div><div class="line">                <span class="string">'class'</span> =&gt; <span class="string">'yii\log\FileTarget'</span>,</div><div class="line">            ],</div><div class="line">        ],</div><div class="line">    ],</div><div class="line">    <span class="string">'db'</span> =&gt; [</div><div class="line">        <span class="string">'class'</span> =&gt; <span class="string">'yii\db\Connection'</span>,</div><div class="line">        <span class="string">'dsn'</span> =&gt; <span class="string">'mysql:host=localhost;dbname=stay2'</span>,</div><div class="line">        <span class="string">'username'</span> =&gt; <span class="string">'root'</span>,</div><div class="line">        <span class="string">'password'</span> =&gt; <span class="string">''</span>,</div><div class="line">        <span class="string">'charset'</span> =&gt; <span class="string">'utf8'</span>,</div><div class="line">    ],</div><div class="line">];</div></pre></td></tr></table></figure></p>
+<p>仅仅需要 “require”，就可以取得一个配置文件的配置内容，像这样：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$config = <span class="keyword">require</span>(<span class="string">'path/to/web.php'</span>);</div><div class="line">(<span class="keyword">new</span> yii\web\Application($config))-&gt;run();</div></pre></td></tr></table></figure></p>
+<h4 id="默认配置"><a href="#默认配置" class="headerlink" title="默认配置"></a>默认配置</h4><p><em><strong>Yii::createObject()</strong></em> 方法基于依赖注入容器实现。使用 <em><strong>Yii::creatObject()</strong></em> 创建对象时，可以附加一系列默认配置到指定类的任何实例。默认配置还可以在入口脚本中调用 <em><strong>Yii::$container-&gt;set()</strong></em> 来定义。</p>
+<p>例如，如果你想自定义 <em><strong>yii\widgets\LinkPager</strong></em> 小部件，以便让分页器最多只显示 5 个翻页按钮（默认是 10 个），你可以用下述代码实现：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">\Yii::$container-&gt;set(<span class="string">'yii\widgets\LinkPager'</span>, [</div><div class="line">    <span class="string">'maxButtonCount'</span> =&gt; <span class="number">5</span>,</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+<p>不使用默认配置的话，你就得在任何使用分页器的地方，都配置 maxButtonCount 的值。</p>
+<p>环境常量</p>
+<p>配置经常要随着应用运行的不同环境更改。例如在开发环境中，你可能使用名为 mydb_dev 的数据库，而生产环境则使用 mydb_prod 数据库。为了便于切换使用环境，Yii 提供了一个定义在入口脚本中的 <strong>YII_ENV</strong> 常量。如下：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">defined(<span class="string">'YII_ENV'</span>) <span class="keyword">or</span> define(<span class="string">'YII_ENV'</span>, <span class="string">'dev'</span>);</div></pre></td></tr></table></figure></p>
+<p>你可以把 YII_ENV 定义成以下任何一种值：</p>
+<blockquote>
+<ul>
+<li>prod：生产环境。常量 YII_ENV_PROD 将被看作 true。如果你没修改过，这就是 YII_ENV 的默认值。</li>
+<li>dev：开发环境。常量 YII_ENV_DEV 将被看作 true。</li>
+<li>test：测试环境。常量 YII_ENV_TEST 将被看作 true。<br>有了这些环境常量，你就可以根据当下应用运行环境的不同，进行差异化配置。例如，应用可以包含下述代码只在开发环境中开启调试工具。</li>
+</ul>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$config = [...];</div><div class="line"></div><div class="line"><span class="keyword">if</span> (YII_ENV_DEV) &#123;</div><div class="line">    <span class="comment">// 根据 `dev` 环境进行的配置调整</span></div><div class="line">    $config[<span class="string">'bootstrap'</span>][] = <span class="string">'debug'</span>;</div><div class="line">    $config[<span class="string">'modules'</span>][<span class="string">'debug'</span>] = <span class="string">'yii\debug\Module'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">return</span> $config;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/yii框架/">yii框架</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-yii框架入口脚本" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/31/yii框架入口脚本/" class="article-date">
+  	<time datetime="2016-08-31T01:09:00.000Z" itemprop="datePublished">2016-08-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/31/yii框架入口脚本/">入口脚本</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="入口脚本"><a href="#入口脚本" class="headerlink" title="入口脚本"></a>入口脚本</h2><p>入口脚本是应用启动流程中的第一环， 一个应用（不管是网页应用还是控制台应用）只有一个入口脚本。 终端用户的请求通过入口脚本实例化应用并将将请求转发到应用。</p>
+<p>Web 应用的入口脚本必须放在终端用户能够访问的目录下， 通常命名为 <em>index.php</em>， 也可以使用 Web 服务器能定位到的其他名称。</p>
+<p>控制台应用的入口脚本一般在应用根目录下命名为 yii（后缀为.php）， 该文件需要有执行权限， 这样用户就能通过命令 <em>./yii <route> [arguments] [options]</route></em> 来运行控制台应用。</p>
+<p>入口脚本主要完成以下工作：</p>
+<blockquote>
+<ul>
+<li>定义全局常量；</li>
+<li>注册 Composer 自动加载器；</li>
+<li>包含 Yii 类文件；</li>
+<li>加载应用配置；</li>
+<li>创建一个应用实例并配置;</li>
+<li>调用 yii\base\Application::run() 来处理请求。</li>
+</ul>
+</blockquote>
+<h4 id="Web-应用"><a href="#Web-应用" class="headerlink" title="Web 应用"></a>Web 应用</h4><p>以下是基础应用模版入口脚本的代码：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line">defined(<span class="string">'YII_DEBUG'</span>) <span class="keyword">or</span> define(<span class="string">'YII_DEBUG'</span>, <span class="keyword">true</span>);</div><div class="line">defined(<span class="string">'YII_ENV'</span>) <span class="keyword">or</span> define(<span class="string">'YII_ENV'</span>, <span class="string">'dev'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 注册 Composer 自动加载器</span></div><div class="line"><span class="keyword">require</span>(<span class="keyword">__DIR__</span> . <span class="string">'/../vendor/autoload.php'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 包含 Yii 类文件</span></div><div class="line"><span class="keyword">require</span>(<span class="keyword">__DIR__</span> . <span class="string">'/../vendor/yiisoft/yii2/Yii.php'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 加载应用配置</span></div><div class="line">$config = <span class="keyword">require</span>(<span class="keyword">__DIR__</span> . <span class="string">'/../config/web.php'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 创建、配置、运行一个应用</span></div><div class="line">(<span class="keyword">new</span> yii\web\Application($config))-&gt;run();</div></pre></td></tr></table></figure></p>
+<h4 id="控制台应用"><a href="#控制台应用" class="headerlink" title="控制台应用"></a>控制台应用</h4><p>以下是一个控制台应用的入口脚本：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env php</span></div><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Yii console bootstrap file.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@link</span> http://www.yiiframework.com/</div><div class="line"> * <span class="doctag">@copyright</span> Copyright (c) 2008 Yii Software LLC</div><div class="line"> * <span class="doctag">@license</span> http://www.yiiframework.com/license/</div><div class="line"> */</div><div class="line"></div><div class="line">defined(<span class="string">'YII_DEBUG'</span>) <span class="keyword">or</span> define(<span class="string">'YII_DEBUG'</span>, <span class="keyword">true</span>);</div><div class="line"></div><div class="line"><span class="comment">// 注册 Composer 自动加载器</span></div><div class="line"><span class="keyword">require</span>(<span class="keyword">__DIR__</span> . <span class="string">'/vendor/autoload.php'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 包含 Yii 类文件</span></div><div class="line"><span class="keyword">require</span>(<span class="keyword">__DIR__</span> . <span class="string">'/vendor/yiisoft/yii2/Yii.php'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 加载应用配置</span></div><div class="line">$config = <span class="keyword">require</span>(<span class="keyword">__DIR__</span> . <span class="string">'/config/console.php'</span>);</div><div class="line"></div><div class="line">$application = <span class="keyword">new</span> yii\console\Application($config);</div><div class="line">$exitCode = $application-&gt;run();</div><div class="line"><span class="keyword">exit</span>($exitCode);</div></pre></td></tr></table></figure></p>
+<h4 id="定义常量"><a href="#定义常量" class="headerlink" title="定义常量"></a>定义常量</h4><p>入口脚本是定义全局常量的最好地方，Yii 支持以下三个常量：</p>
+<blockquote>
+<ul>
+<li>YII_DEBUG：标识应用是否运行在调试模式。当在调试模式下， 应用会保留更多日志信息，如果抛出异常，会显示详细的错误调用堆栈。 因此，调试模式主要适合在开发阶段使用，YII_DEBUG 默认值为 false。</li>
+<li>YII_ENV：标识应用运行的环境， 详情请查阅配置章节。<em> YII_ENV 默认值为 ‘prod’，表示应用运行在线上产品环境.</em>你可以把 YII_ENV 定义成以下任何一种值：<blockquote>
+<ul>
+<li>prod：生产环境。常量 YII_ENV_PROD 将被看作 true。如果你没修改过，这就是 YII_ENV 的默认值。</li>
+<li>dev：开发环境。常量 YII_ENV_DEV 将被看作 true。</li>
+<li>test：测试环境。常量 YII_ENV_TEST 将被看作 true。</li>
+</ul>
+</blockquote>
+</li>
+<li>YII_ENABLE_ERROR_HANDLER：标识是否启用 Yii 提供的错误处理， 默认为 true。<br>当定义一个常量时，通常使用类似如下代码来定义：<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">defined(<span class="string">'YII_DEBUG'</span>) <span class="keyword">or</span> define(<span class="string">'YII_DEBUG'</span>, <span class="keyword">true</span>);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<p>上面的代码等同于:<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (!defined(<span class="string">'YII_DEBUG'</span>)) &#123;</div><div class="line">    define(<span class="string">'YII_DEBUG'</span>, <span class="keyword">true</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>显然第一段代码更加简洁易懂。</p>
+<p>常量定义应该在入口脚本的开头，这样包含其他 PHP 文件时， 常量就能生效。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/yii框架/">yii框架</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-mapkit与CoreLocation 入门： 在地图上显示当前位置以及标注与运动路径" class="article article-type-post" itemscope itemprop="blogPost">
   
