@@ -76,7 +76,7 @@
 						<li>Links</li>
 						
 						
-						<li>About</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -113,7 +113,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/NFC/" style="font-size: 10px;">NFC</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Swift/" style="font-size: 15px;">Swift</a> <a href="/tags/Swift-mapkit/" style="font-size: 10px;">Swift mapkit</a> <a href="/tags/blog主题设置/" style="font-size: 10px;">blog主题设置</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/yii框架/" style="font-size: 15px;">yii框架</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/芒果的个人信息/" style="font-size: 10px;">芒果的个人信息</a> <a href="/tags/装修风格/" style="font-size: 15px;">装修风格</a>
+						<a href="/tags/NFC/" style="font-size: 10px;">NFC</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Swift/" style="font-size: 15px;">Swift</a> <a href="/tags/Swift-mapkit/" style="font-size: 10px;">Swift mapkit</a> <a href="/tags/blog主题设置/" style="font-size: 10px;">blog主题设置</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/yii框架/" style="font-size: 15px;">yii框架</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/芒果的个人信息/" style="font-size: 10px;">芒果的个人信息</a> <a href="/tags/装修风格/" style="font-size: 20px;">装修风格</a>
 					</div>
 				</section>
 				
@@ -198,6 +198,124 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-mac-下查看端口占用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/08/mac-下查看端口占用/" class="article-date">
+  	<time datetime="2016-12-08T00:13:41.000Z" itemprop="datePublished">2016-12-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/08/mac-下查看端口占用/">mac 下查看端口占用</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="lsof-i-tcp-port-port为端口号，例如-9000-80）"><a href="#lsof-i-tcp-port-port为端口号，例如-9000-80）" class="headerlink" title="lsof -i tcp:port (port为端口号，例如 9000 80）"></a>lsof -i tcp:port (port为端口号，例如 9000 80）</h3>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命令行/">命令行</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-mac-php多版本-命令行版本与服务器-phpino-版本不符合" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/07/mac-php多版本-命令行版本与服务器-phpino-版本不符合/" class="article-date">
+  	<time datetime="2016-12-07T03:42:18.000Z" itemprop="datePublished">2016-12-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/07/mac-php多版本-命令行版本与服务器-phpino-版本不符合/">mac php多版本  命令行版本与服务器 phpino() 版本不符合 </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p> terminal 运行 php -v 获取版本号如下<br> PHP 7.1.0 (cli) (built: Dec  2 2016 09:19:56) ( NTS )<br>Copyright (c) 1997-2016 The PHP Group<br>Zend Engine v3.1.0-dev, Copyright (c) 1998-2016 Zend Technologies<br>    with Zend OPcache v7.1.0, Copyright (c) 1999-2016, by Zend Technologies<br>nginx+php-fpm 输出 phpinfo()<br>获取信息如下：<br>PHP Version 5.6.19</p>
+<h3 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h3><p>php-fpm  脚本执行的PHP 是 /usr/bin/php<br>命令行脚本 执行的 PHP 因为在配置文件 ~/.profile 中配置了<br>export PATH=/usr/local/php5/bin:$PATH<br>所以 执行的PHP 是 usr/local/php5</p>
+<p>修改 /usr/local/run/php-fpm</p>
+<p>prefix=/usr/local/php</p>
+<p>改为</p>
+<p>prefix=/usr/local/php5</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-python-日期时间" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -844,181 +962,6 @@
     <div class="article-info article-info-index">
       
       
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Swift语法——扩展-Extension" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/30/Swift语法——扩展-Extension/" class="article-date">
-  	<time datetime="2016-05-30T03:58:38.000Z" itemprop="datePublished">2016-05-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/30/Swift语法——扩展-Extension/">Swift语法——扩展(Extension)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="扩展（Extensions）"><a href="#扩展（Extensions）" class="headerlink" title="扩展（Extensions）"></a>扩展（Extensions）</h2><p>本页包含内容：</p>
-<blockquote>
-<ul>
-<li>扩展语法</li>
-<li>计算型属性</li>
-<li>构造器</li>
-<li>方法</li>
-<li>下标</li>
-<li>嵌套类型</li>
-</ul>
-</blockquote>
-<p>扩展就是向一个已有的类、结构体或枚举类型添加新功能（functionality）。这包括在没有权限获取原始源代码的情况下扩展类型的能力（即逆向建模）。扩展和 Objective-C 中的分类（categories）类似。（不过与Objective-C不同的是，Swift 的扩展没有名字。）</p>
-<p>Swift 中的扩展可以：</p>
-<blockquote>
-<ul>
-<li>添加计算型属性和计算静态属性</li>
-<li>定义实例方法和类型方法</li>
-<li>提供新的构造器</li>
-<li>定义下标</li>
-<li>定义和使用新的嵌套类型</li>
-<li>使一个已有类型符合某个接口</li>
-</ul>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">注意：</div><div class="line"></div><div class="line">如果你定义了一个扩展向一个已有类型添加新功能，</div><div class="line">那么这个新功能对该类型的所有已有实例中都是可用的，</div><div class="line">即使它们是在你的这个扩展的前面定义的。</div></pre></td></tr></table></figure>
-<h3 id="扩展语法（Extension-Syntax）"><a href="#扩展语法（Extension-Syntax）" class="headerlink" title="扩展语法（Extension Syntax）"></a>扩展语法（Extension Syntax）</h3><p>声明一个扩展使用关键字extension：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">SomeType</span> </span>&#123;</div><div class="line">    <span class="comment">// 加到SomeType的新功能写到这里</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>一个扩展可以扩展一个已有类型，使其能够适配一个或多个协议（protocol）。当这种情况发生时，接口的名字应该完全按照类或结构体的名字的方式进行书写：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">SomeType</span>: <span class="title">SomeProtocol</span>, <span class="title">AnotherProctocol</span> </span>&#123;</div><div class="line">    <span class="comment">// 协议实现写到这里</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>按照这种方式添加的协议遵循者（protocol conformance）被称之为在扩展中添加协议遵循者</p>
-<p>计算型属性（Computed Properties）</p>
-<p>扩展可以向已有类型添加计算型实例属性和计算型类型属性。下面的例子向 Swift 的内建Double类型添加了5个计算型实例属性，从而提供与距离单位协作的基本支持。<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Double</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> km: <span class="type">Double</span> &#123; <span class="keyword">return</span> <span class="keyword">self</span> * <span class="number">1_000.0</span> &#125;</div><div class="line">    <span class="keyword">var</span> m : <span class="type">Double</span> &#123; <span class="keyword">return</span> <span class="keyword">self</span> &#125;</div><div class="line">    <span class="keyword">var</span> cm: <span class="type">Double</span> &#123; <span class="keyword">return</span> <span class="keyword">self</span> / <span class="number">100.0</span> &#125;</div><div class="line">    <span class="keyword">var</span> mm: <span class="type">Double</span> &#123; <span class="keyword">return</span> <span class="keyword">self</span> / <span class="number">1_000.0</span> &#125;</div><div class="line">    <span class="keyword">var</span> ft: <span class="type">Double</span> &#123; <span class="keyword">return</span> <span class="keyword">self</span> / <span class="number">3.28084</span> &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> oneInch = <span class="number">25.4</span>.mm</div><div class="line"><span class="built_in">println</span>(<span class="string">"One inch is <span class="subst">\(oneInch)</span> meters"</span>)</div><div class="line"><span class="comment">// 打印输出："One inch is 0.0254 meters"</span></div><div class="line"><span class="keyword">let</span> threeFeet = <span class="number">3</span>.ft</div><div class="line"><span class="built_in">println</span>(<span class="string">"Three feet is <span class="subst">\(threeFeet)</span> meters"</span>)</div><div class="line"><span class="comment">// 打印输出："Three feet is 0.914399970739201 meters"</span></div></pre></td></tr></table></figure></p>
-<p>这些计算属性表达的含义是把一个Double型的值看作是某单位下的长度值。即使它们被实现为计算型属性，但这些属性仍可以接一个带有dot语法的浮点型字面值，而这恰恰是使用这些浮点型字面量实现距离转换的方式。</p>
-<p>在上述例子中，一个Double型的值1.0被用来表示“1米”。这就是为什么m计算型属性返回self——表达式1.m被认为是计算1.0的Double值。</p>
-<p>其它单位则需要一些转换来表示在米下测量的值。1千米等于1,000米，所以km计算型属性要把值乘以1_000.00来转化成单位米下的数值。类似地，1米有3.28024英尺，所以ft计算型属性要把对应的Double值除以3.28024来实现英尺到米的单位换算。</p>
-<p>这些属性是只读的计算型属性，所有从简考虑它们不用get关键字表示。它们的返回值是Double型，而且可以用于所有接受Double的数学计算中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">let aMarathon = 42.km + 195.m</div><div class="line">println(&quot;A marathon is \(aMarathon) meters long&quot;)</div><div class="line">// 打印输出：&quot;A marathon is 42495.0 meters long&quot;</div><div class="line">注意：</div></pre></td></tr></table></figure></p>
-<p>扩展可以添加新的计算属性，但是不可以添加存储属性，也不可以向已有属性添加属性观测器(property observers)。</p>
-<h3 id="构造器（Initializers）"><a href="#构造器（Initializers）" class="headerlink" title="构造器（Initializers）"></a>构造器（Initializers）</h3><p>扩展可以向已有类型添加新的构造器。这可以让你扩展其它类型，将你自己的定制类型作为构造器参数，或者提供该类型的原始实现中没有包含的额外初始化选项。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">注意：</div><div class="line"></div><div class="line">如果你使用扩展向一个值类型添加一个构造器，该构造器向所有的存储属性提供默认值</div><div class="line">，而且没有定义任何定制构造器（custom initializers），那么对于来自你的扩展</div><div class="line">构造器中的值类型，你可以调用默认构造器(default initializers)和成员级构造</div><div class="line">器(memberwise initializers)。 正如在值类型的构造器授权中描述的，如果你已</div><div class="line">经把构造器写成值类型原始实现的一部分，上述规则不再适用。</div></pre></td></tr></table></figure></p>
-<p>下面的例子定义了一个用于描述几何矩形的定制结构体Rect。这个例子同时定义了两个辅助结构体Size和Point，它们都把0.0作为所有属性的默认值：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Size</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> width = <span class="number">0.0</span>, height = <span class="number">0.0</span></div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> x = <span class="number">0.0</span>, y = <span class="number">0.0</span></div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Rect</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> origin = <span class="type">Point</span>()</div><div class="line">    <span class="keyword">var</span> size = <span class="type">Size</span>()</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>因为结构体Rect提供了其所有属性的默认值，所以正如默认构造器中描述的，它可以自动接受一个默认的构造器和一个成员级构造器。这些构造器可以用于构造新的Rect实例：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> defaultRect = <span class="type">Rect</span>()</div><div class="line"><span class="keyword">let</span> memberwiseRect = <span class="type">Rect</span>(origin: <span class="type">Point</span>(x: <span class="number">2.0</span>, y: <span class="number">2.0</span>),</div><div class="line">    size: <span class="type">Size</span>(width: <span class="number">5.0</span>, height: <span class="number">5.0</span>))</div></pre></td></tr></table></figure>
-<p>你可以提供一个额外的使用特殊中心点和大小的构造器来扩展Rect结构体：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Rect</span> </span>&#123;</div><div class="line">    <span class="keyword">init</span>(center: <span class="type">Point</span>, size: <span class="type">Size</span>) &#123;</div><div class="line">        <span class="keyword">let</span> originX = center.x - (size.width / <span class="number">2</span>)</div><div class="line">        <span class="keyword">let</span> originY = center.y - (size.height / <span class="number">2</span>)</div><div class="line">        <span class="keyword">self</span>.<span class="keyword">init</span>(origin: <span class="type">Point</span>(x: originX, y: originY), size: size)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>这个新的构造器首先根据提供的center和size值计算一个合适的原点。然后调用该结构体自动的成员构造器init(origin:size:)，该构造器将新的原点和大小存到了合适的属性中：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> centerRect = <span class="type">Rect</span>(center: <span class="type">Point</span>(x: <span class="number">4.0</span>, y: <span class="number">4.0</span>),</div><div class="line">    size: <span class="type">Size</span>(width: <span class="number">3.0</span>, height: <span class="number">3.0</span>))</div><div class="line"><span class="comment">// centerRect的原点是 (2.5, 2.5)，大小是 (3.0, 3.0)</span></div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">注意：</div><div class="line"></div><div class="line">如果你使用扩展提供了一个新的构造器，你依旧有责任保证构造过程能够让所有实例完</div><div class="line">全初始化。</div></pre></td></tr></table></figure>
-<h3 id="方法（Methods）"><a href="#方法（Methods）" class="headerlink" title="方法（Methods）"></a>方法（Methods）</h3><p>扩展可以向已有类型添加新的实例方法和类型方法。下面的例子向Int类型添加一个名为repetitions的新实例方法：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Int</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">repetitions</span><span class="params">(task: <span class="params">()</span></span></span> -&gt; ()) &#123;</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>..<span class="keyword">self</span> &#123;</div><div class="line">            task()</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>这个repetitions方法使用了一个() -&gt; ()类型的单参数（single argument），表明函数没有参数而且没有返回值。</p>
-<p>定义该扩展之后，你就可以对任意整数调用repetitions方法,实现的功能则是多次执行某任务：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">3.repetitions(&#123;</div><div class="line">    println(&quot;Hello!&quot;)</div><div class="line">    &#125;)</div><div class="line">// Hello!</div><div class="line">// Hello!</div><div class="line">// Hello!</div><div class="line">可以使用 trailing 闭包使调用更加简洁：</div><div class="line"></div><div class="line">3.repetitions&#123;</div><div class="line">    println(&quot;Goodbye!&quot;)</div><div class="line">&#125;</div><div class="line">// Goodbye!</div><div class="line">// Goodbye!</div><div class="line">// Goodbye!</div></pre></td></tr></table></figure></p>
-<h3 id="修改实例方法（Mutating-Instance-Methods）"><a href="#修改实例方法（Mutating-Instance-Methods）" class="headerlink" title="修改实例方法（Mutating Instance Methods）"></a>修改实例方法（Mutating Instance Methods）</h3><p>通过扩展添加的实例方法也可以修改该实例本身。结构体和枚举类型中修改self或其属性的方法必须将该实例方法标注为mutating，正如来自原始实现的修改方法一样。</p>
-<p>下面的例子向Swift的Int类型添加了一个新的名为square的修改方法，来实现一个原始值的平方计算：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Int</span> </span>&#123;</div><div class="line">    <span class="keyword">mutating</span> <span class="function"><span class="keyword">func</span> <span class="title">square</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="keyword">self</span> = <span class="keyword">self</span> * <span class="keyword">self</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> someInt = <span class="number">3</span></div><div class="line">someInt.square()</div><div class="line"><span class="comment">// someInt 现在值是 9</span></div></pre></td></tr></table></figure></p>
-<h3 id="下标（Subscripts）"><a href="#下标（Subscripts）" class="headerlink" title="下标（Subscripts）"></a>下标（Subscripts）</h3><p>扩展可以向一个已有类型添加新下标。这个例子向Swift内建类型Int添加了一个整型下标。该下标[n]返回十进制数字从右向左数的第n个数字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">123456789[0]返回9</div><div class="line">123456789[1]返回8</div><div class="line">...等等</div></pre></td></tr></table></figure></p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Int</span> </span>&#123;</div><div class="line">    <span class="keyword">subscript</span>(digitIndex: <span class="type">Int</span>) -&gt; <span class="type">Int</span> &#123;</div><div class="line">        <span class="keyword">var</span> decimalBase = <span class="number">1</span></div><div class="line">            <span class="keyword">for</span> <span class="number">_</span> <span class="keyword">in</span> <span class="number">1</span>...digitIndex &#123;</div><div class="line">                decimalBase *= <span class="number">10</span></div><div class="line">            &#125;</div><div class="line">        <span class="keyword">return</span> (<span class="keyword">self</span> / decimalBase) % <span class="number">10</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="number">746381295</span>[<span class="number">0</span>]</div><div class="line"><span class="comment">// returns 5</span></div><div class="line"><span class="number">746381295</span>[<span class="number">1</span>]</div><div class="line"><span class="comment">// returns 9</span></div><div class="line"><span class="number">746381295</span>[<span class="number">2</span>]</div><div class="line"><span class="comment">// returns 2</span></div><div class="line"><span class="number">746381295</span>[<span class="number">8</span>]</div><div class="line"><span class="comment">// returns 7</span></div></pre></td></tr></table></figure>
-<p>如果该Int值没有足够的位数，即下标越界，那么上述实现的下标会返回0，因为它会在数字左边自动补0：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">746381295[9]</div><div class="line">//returns 0, 即等同于：</div><div class="line">0746381295[9]</div></pre></td></tr></table></figure></p>
-<h3 id="嵌套类型（Nested-Types）"><a href="#嵌套类型（Nested-Types）" class="headerlink" title="嵌套类型（Nested Types）"></a>嵌套类型（Nested Types）</h3><p>扩展可以向已有的类、结构体和枚举添加新的嵌套类型：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Character</span> </span>&#123;</div><div class="line">    <span class="class"><span class="keyword">enum</span> <span class="title">Kind</span> </span>&#123;</div><div class="line">        <span class="keyword">case</span> <span class="type">Vowel</span>, <span class="type">Consonant</span>, <span class="type">Other</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> kind: <span class="type">Kind</span> &#123;</div><div class="line">        <span class="keyword">switch</span> <span class="type">String</span>(<span class="keyword">self</span>).lowercaseString &#123;</div><div class="line">        <span class="keyword">case</span> <span class="string">"a"</span>, <span class="string">"e"</span>, <span class="string">"i"</span>, <span class="string">"o"</span>, <span class="string">"u"</span>:</div><div class="line">            <span class="keyword">return</span> .<span class="type">Vowel</span></div><div class="line">        <span class="keyword">case</span> <span class="string">"b"</span>, <span class="string">"c"</span>, <span class="string">"d"</span>, <span class="string">"f"</span>, <span class="string">"g"</span>, <span class="string">"h"</span>, <span class="string">"j"</span>, <span class="string">"k"</span>, <span class="string">"l"</span>, <span class="string">"m"</span>,</div><div class="line">             <span class="string">"n"</span>, <span class="string">"p"</span>, <span class="string">"q"</span>, <span class="string">"r"</span>, <span class="string">"s"</span>, <span class="string">"t"</span>, <span class="string">"v"</span>, <span class="string">"w"</span>, <span class="string">"x"</span>, <span class="string">"y"</span>, <span class="string">"z"</span>:</div><div class="line">            <span class="keyword">return</span> .<span class="type">Consonant</span></div><div class="line">        <span class="keyword">default</span>:</div><div class="line">            <span class="keyword">return</span> .<span class="type">Other</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>该例子向Character添加了新的嵌套枚举。这个名为Kind的枚举表示特定字符的类型。具体来说，就是表示一个标准的拉丁脚本中的字符是元音还是辅音（不考虑口语和地方变种），或者是其它类型。</p>
-<p>这个类子还向Character添加了一个新的计算实例属性，即kind，用来返回合适的Kind枚举成员。</p>
-<p>现在，这个嵌套枚举可以和一个Character值联合使用了：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">printLetterKinds</span><span class="params">(word: String)</span></span> &#123;</div><div class="line">    <span class="built_in">println</span>(<span class="string">"'\\(word)' is made up of the following kinds of letters:"</span>)</div><div class="line">    <span class="keyword">for</span> character <span class="keyword">in</span> word &#123;</div><div class="line">        <span class="keyword">switch</span> character.kind &#123;</div><div class="line">        <span class="keyword">case</span> .<span class="type">Vowel</span>:</div><div class="line">            <span class="built_in">print</span>(<span class="string">"vowel "</span>)</div><div class="line">        <span class="keyword">case</span> .<span class="type">Consonant</span>:</div><div class="line">            <span class="built_in">print</span>(<span class="string">"consonant "</span>)</div><div class="line">        <span class="keyword">case</span> .<span class="type">Other</span>:</div><div class="line">            <span class="built_in">print</span>(<span class="string">"other "</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">print</span>(<span class="string">"\n"</span>)</div><div class="line">&#125;</div><div class="line">printLetterKinds(<span class="string">"Hello"</span>)</div><div class="line"><span class="comment">// 'Hello' is made up of the following kinds of letters:</span></div><div class="line"><span class="comment">// consonant vowel consonant consonant vowel</span></div></pre></td></tr></table></figure></p>
-<p>函数printLetterKinds的输入是一个String值并对其字符进行迭代。在每次迭代过程中，考虑当前字符的kind计算属性，并打印出合适的类别描述。所以printLetterKinds就可以用来打印一个完整单词中所有字母的类型，正如上述单词”hello”所展示的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">注意：</div><div class="line"></div><div class="line">由于已知character.kind是Character.Kind型，所以Character.Kind中的所有</div><div class="line">成员值都可以使用switch语句里的形式简写，比如使用</div><div class="line"> .Vowel代替Character.Kind.Vowel</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-设置blog主题－cover" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/25/设置blog主题－cover/" class="article-date">
-  	<time datetime="2016-05-25T10:58:00.000Z" itemprop="datePublished">2016-05-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/25/设置blog主题－cover/">设置blog主题－cover</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h1><blockquote>
-<ul>
-<li>Dynamically-resized facebook-like cover photo displayed on index page, backed by Anystretch.</li>
-<li>Mobile-optimized by using Twitter bootstrap.<br>Dynamically-fixed nav-bar design.</li>
-<li>Beautiful profile design with logo, social site links.</li>
-<li>Duoshuo comment widget and Jiathis share widget integrated (CSS-hack involved!), friendly for Chinese users.</li>
-<li>Newer and older posts pagination support.</li>
-</ul>
-</blockquote>
-<h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><p>Execute the following command and modify theme in _config.yml to cover.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd your-hexo-dir</div><div class="line">git clone https://github.com/daisygao/hexo-themes-cover.git themes/cover</div></pre></td></tr></table></figure></p>
-<h1 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h1><p>Execute the following command to update new.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd themes/cover</div><div class="line">git pull</div></pre></td></tr></table></figure></p>
-<h1 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h1><p>Default config:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">menu:</div><div class="line">  Home: /</div><div class="line">  Archives: /archives</div><div class="line"></div><div class="line">widgets:</div><div class="line">- search</div><div class="line"></div><div class="line">cover:</div><div class="line">  enable: true</div><div class="line">  url: http://ww1.sinaimg.cn/large/6cea169fjw1edgyzma1xcj21kw16ohba.jpg</div><div class="line"></div><div class="line">excerpt_link: Read More</div><div class="line"></div><div class="line">full_format: &apos;ddd, MMM D YYYY, h:mm:ss a&apos;</div><div class="line"></div><div class="line">addthis:</div><div class="line">  enable: true</div><div class="line">  pubid:</div><div class="line">  facebook:</div><div class="line">  twitter:</div><div class="line">  google: true</div><div class="line">  pinterest:</div><div class="line"></div><div class="line">fancybox: true</div><div class="line"></div><div class="line">google_analytics: UA-36877105-X</div><div class="line">rss:</div><div class="line"></div><div class="line">comment_provider: duoshuo</div><div class="line"></div><div class="line"></div><div class="line"># Duoshuo comment</div><div class="line">duoshuo:</div><div class="line">  short_name: your_name</div><div class="line"></div><div class="line">social:</div><div class="line">  github: https://github.com/your_name</div><div class="line">  weibo: http://weibo.com/your_name</div><div class="line"></div><div class="line"></div><div class="line">auto_change:</div><div class="line">  enable: true</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog主题设置/">blog主题设置</a></li></ul>
-	</div>
-
       
 
       
