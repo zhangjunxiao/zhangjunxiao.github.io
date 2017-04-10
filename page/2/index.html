@@ -113,7 +113,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/NFC/" style="font-size: 10px;">NFC</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Swift/" style="font-size: 15px;">Swift</a> <a href="/tags/Swift-mapkit/" style="font-size: 10px;">Swift mapkit</a> <a href="/tags/blog主题设置/" style="font-size: 10px;">blog主题设置</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/yii框架/" style="font-size: 15px;">yii框架</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/芒果的个人信息/" style="font-size: 10px;">芒果的个人信息</a> <a href="/tags/装修风格/" style="font-size: 20px;">装修风格</a>
+						<a href="/tags/NFC/" style="font-size: 10px;">NFC</a> <a href="/tags/PHP/" style="font-size: 13.33px;">PHP</a> <a href="/tags/Swift/" style="font-size: 13.33px;">Swift</a> <a href="/tags/Swift-mapkit/" style="font-size: 10px;">Swift mapkit</a> <a href="/tags/blog主题设置/" style="font-size: 10px;">blog主题设置</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/yii框架/" style="font-size: 13.33px;">yii框架</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/芒果的个人信息/" style="font-size: 10px;">芒果的个人信息</a> <a href="/tags/装修风格/" style="font-size: 20px;">装修风格</a>
 					</div>
 				</section>
 				
@@ -198,6 +198,351 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-Mac下使用ACR122u-A9-安装及使用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/19/Mac下使用ACR122u-A9-安装及使用/" class="article-date">
+  	<time datetime="2016-12-19T01:16:15.000Z" itemprop="datePublished">2016-12-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/19/Mac下使用ACR122u-A9-安装及使用/">Mac下使用ACR122u-A9 安装及使用</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="安装nfc-tool之libnfc"><a href="#安装nfc-tool之libnfc" class="headerlink" title="安装nfc-tool之libnfc"></a>安装nfc-tool之libnfc</h4><p>github地址： <em><a href="https://github.com/nfc-tools/libnfc" target="_blank" rel="external">https://github.com/nfc-tools/libnfc</a></em></p>
+<h5 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h5><blockquote>
+<ul>
+<li>pn53x_usb &amp; acr122_usb:</li>
+<li>libusb-0.1 <a href="http://libusb.sf.net" target="_blank" rel="external">http://libusb.sf.net</a></li>
+<li><p>homebrew 安装命令： brew install libusb</p>
+</li>
+<li><p>acr122_pcsc:</p>
+</li>
+<li>pcsc-lite <a href="http://pcsclite.alioth.debian.org/" target="_blank" rel="external">http://pcsclite.alioth.debian.org/</a></li>
+<li>homebrew 安装命令： brew install pcsc-lite</li>
+</ul>
+</blockquote>
+<h5 id="貌似是单元测试模块的框架"><a href="#貌似是单元测试模块的框架" class="headerlink" title="貌似是单元测试模块的框架"></a>貌似是单元测试模块的框架</h5><blockquote>
+<ul>
+<li>The regression test suite depends on the cutter framework: <a href="http://cutter.sf.net" target="_blank" rel="external">http://cutter.sf.net</a></li>
+<li>homebrew 安装命令：brew install cutter</li>
+</ul>
+</blockquote>
+<h5 id="安装-libnfc"><a href="#安装-libnfc" class="headerlink" title="安装 libnfc"></a>安装 libnfc</h5><blockquote>
+<ul>
+<li>homebrew 安装命令：brew install libnfc</li>
+</ul>
+</blockquote>
+<h5 id="安装-libfreefare"><a href="#安装-libfreefare" class="headerlink" title="安装 libfreefare"></a>安装 libfreefare</h5><blockquote>
+<ul>
+<li>homebrew 安装命令：brew install libfreefare</li>
+</ul>
+</blockquote>
+<h5 id="安装MFOC"><a href="#安装MFOC" class="headerlink" title="安装MFOC"></a>安装MFOC</h5><blockquote>
+<ul>
+<li>homebrew 安装命令：brew install mfoc</li>
+</ul>
+</blockquote>
+<p>####使用<br><em>nfc-list -v</em> 查看一下设备列表<br>MFOC(Mifare Classic Offline Cracker)是一款离线的认证嵌套攻击工具<br><em>mfoc -h </em>查看帮助文档<br>使用方法参考文档<br>Arch Linux上使用ACR122U破解鲜奶卡  <a href="http://www.tuicool.com/articles/3QZbume" target="_blank" rel="external">http://www.tuicool.com/articles/3QZbume</a><br>RFID破解三两事 <a href="http://www.freebuf.com/articles/wireless/8792.html" target="_blank" rel="external">http://www.freebuf.com/articles/wireless/8792.html</a> </p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NFC/">NFC</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-php-报错级别设置-屏蔽notice-级别" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/09/php-报错级别设置-屏蔽notice-级别/" class="article-date">
+  	<time datetime="2016-12-09T02:40:43.000Z" itemprop="datePublished">2016-12-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/09/php-报错级别设置-屏蔽notice-级别/">php 报错级别设置 屏蔽notice 级别 </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="报错级别设置"><a href="#报错级别设置" class="headerlink" title="报错级别设置"></a>报错级别设置</h3><p>常规设置： 输出phpinfo() 查看 php.ini 的路径<br>/usr/local/php5/lib/php.ini</p>
+<p>修改 error_reporting<br>默认 error_reporting = E_ALL<br>改为  error_reporting = E_ALL &amp; ～ E_NOTICE</p>
+<p>修改 log_error = On<br>退出 vi<br>/usr/local/run/php-fpm reload</p>
+<p>输出phpinfo()<br>error_reporting 值依旧未变</p>
+<p>错误原因</p>
+<ol>
+<li><p>搜索了下，发现有人说当log_errors开启时，如果error_log的路径不对，会导致报错显示，php-fpm 运行的用户：组 对error_log的路径 无读写权限时，依旧会输出所有错误</p>
+</li>
+<li><p>/usr/local/php5/etc/php-fpm.conf</p>
+<blockquote>
+<p>; Additional php.ini defines, specific to this pool of workers. These settings<br>; overwrite the values previously defined in the php.ini. The directives are the<br>; same as the PHP SAPI:<br>;   php_value/php_flag             - you can set classic ini defines which can<br>;                                    be overwritten from PHP call ‘ini_set’.<br>;   php_admin_value/php_admin_flag - these directives won’t be overwritten by<br>;                                     PHP call ‘ini<em>set’<br>; For php</em>*flag, valid values are on, off, 1, 0, true, false, yes or no.</p>
+<p>; Defining ‘extension’ will load the corresponding shared extension from<br>; extension_dir. Defining ‘disable_functions’ or ‘disable_classes’ will not<br>; overwrite previously defined php.ini values, but will append the new value<br>; instead.</p>
+<p>; Note: path INI options can be relative and will be expanded with the prefix<br>; (pool, global or /usr/local/php5)</p>
+<p>; Default Value: nothing is defined by default except the values in php.ini and<br>;                specified at startup with the -d argument<br>;php_admin_value[sendmail_path] = /usr/sbin/sendmail -t -i -f www@my.domain.com<br>;php_flag[display_errors] = On<br>php_admin_value[error_log] = /usr/local/php5/var/log/php_error.log<br>;php_admin_flag[log_errors] = On<br>;php_admin_value[memory_limit] = 32M<br>php_admin_value[error_reporting] = 22519</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>这边的设置会强制覆盖 php.ini 的设置  所以可以强制 在这里设置想要的值</p>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-python-os模块help" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/08/python-os模块help/" class="article-date">
+  	<time datetime="2016-12-08T01:33:00.000Z" itemprop="datePublished">2016-12-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/08/python-os模块help/">python os模块help()</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Last login: Thu Dec  8 08:55:24 on ttys002<br>zhangjunxiaodeMacBook-Pro:~ junxiaozhang$ python -v</p>
+<blockquote>
+<p><em># installing zipimport hook
+</em>import zipimport # builtin<br><em># installed zipimport hook
+</em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site.py<br><em>import site # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site.pyc
+</em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py<br><em>import os # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.pyc
+</em>import errno # builtin<br><em>import posix # builtin
+</em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/posixpath.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/posixpath.py<br><em>import posixpath # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/posixpath.pyc
+</em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/stat.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/stat.py<br><em>import stat # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/stat.pyc
+</em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/genericpath.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/genericpath.py<br><em>import genericpath # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/genericpath.pyc
+</em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/warnings.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/warnings.py<br><em>import warnings # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/warnings.pyc
+</em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/linecache.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/linecache.py<br><em>import linecache # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/linecache.pyc
+</em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/types.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/types.py<br><em>import types # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/types.pyc
+</em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/UserDict.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/UserDict.py<br><em>import UserDict # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/UserDict.pyc
+</em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/_abcoll.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/_abcoll.py<br><em>import _abcoll # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/_abcoll.pyc
+</em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/abc.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/abc.py<br><em>import abc # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/abc.pyc
+</em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/_weakrefset.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/_weakrefset.py<br><em>import _weakrefset # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/_weakrefset.pyc
+</em>import _weakref # builtin<br><em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/copy_reg.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/copy_reg.py
+</em>import copy_reg # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/copy_reg.pyc<br><em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/traceback.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/traceback.py
+</em>import traceback # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/traceback.pyc<br><em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sysconfig.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sysconfig.py
+</em>import sysconfig # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sysconfig.pyc<br><em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/re.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/re.py
+</em>import re # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/re.pyc<br><em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sre_compile.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sre_compile.py
+</em>import sre_compile # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sre_compile.pyc<br><em>*import _sre # builtin
+</em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sre_parse.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sre_parse.py<br><em>import sre_parse # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sre_parse.pyc
+</em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sre_constants.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sre_constants.py<br><em>import sre_constants # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sre_constants.pyc
+</em>dlopen(“/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-dynload/_locale.so”, 2);<br><em>import _locale # dynamically loaded from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-dynload/_locale.so
+</em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/_sysconfigdata.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/_sysconfigdata.py<br><em>import _sysconfigdata # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/_sysconfigdata.pyc
+</em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/_osx_support.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/_osx_support.py<br><em>import _osx_support # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/_osx_support.pyc
+</em># zipimport: found 13 names in /Library/Python/2.7/site-packages/python_nmap-0.6.1-py2.7.egg<br><em># zipimport: found 17 names in /Library/Python/2.7/site-packages/pyPdf-1.13-py2.7.egg
+</em># zipimport: found 13 names in /Library/Python/2.7/site-packages/pygeoip-0.3.2-py2.7.egg<br><em># zipimport: found 63 names in /Library/Python/2.7/site-packages/mechanize-0.2.5-py2.7.egg
+</em># zipimport: found 40 names in /Library/Python/2.7/site-packages/beautifulsoup4-4.5.1-py2.7.egg<br><em>import encodings # directory /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/encodings
+</em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/encodings/<strong>init</strong>.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/encodings/<strong>init</strong>.py<br><em>import encodings # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/encodings/<strong>init</strong>.pyc
+</em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/codecs.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/codecs.py<br><em>import codecs # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/codecs.pyc
+</em>import _codecs # builtin<br><em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/encodings/aliases.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/encodings/aliases.py
+</em>import encodings.aliases # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/encodings/aliases.pyc<br><em># /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/encodings/utf_8.pyc matches /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/encodings/utf_8.py
+</em>import encodings.utf_8 # precompiled from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/encodings/utf<em>8.pyc<br><em>Python 2.7.10 (default, Jul 30 2016, 18:31:42)
+</em>[GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.34)] on darwin<br><em>Type “help”, “copyright”, “credits” or “license” for more information.
+</em>dlopen(“/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-dynload/readline.so”, 2);<br><em>import readline # dynamically loaded from /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-dynload/readline.so
+</em>&gt;&gt;&gt; exit(0)<br>*# clear <strong>builtin</strong>.</em><br><em># clear sys.path
+</em># clear sys.argv<br><em># clear sys.ps1
+</em># clear sys.ps2<br><em># clear sys.exitfunc
+</em># clear sys.exc_type<br><em># clear sys.exc_value
+</em># clear sys.exc_traceback<br><em># clear sys.last_type
+</em># clear sys.last_value<br><em># clear sys.last_traceback
+</em># clear sys.path_hooks<br><em># clear sys.path_importer_cache
+</em># clear sys.meta_path<br><em># clear sys.flags
+</em># clear sys.float_info<br><em># restore sys.stdin
+</em># restore sys.stdout<br><em># restore sys.stderr
+</em># cleanup <strong>main</strong><br><em># cleanup[1] encodings
+</em># cleanup[1] site<br><em># cleanup[1] sysconfig
+</em># cleanup[1] abc<br><em># cleanup[1] _weakrefset
+</em># cleanup[1] sre_constants<br><em># cleanup[1] _codecs
+</em># cleanup[1] _warnings<br><em># cleanup[1] zipimport
+</em># cleanup[1] _sysconfigdata<br><em># cleanup[1] encodings.utf_8
+</em># cleanup[1] _osx_support<br><em># cleanup[1] codecs
+</em># cleanup[1] readline<br><em># cleanup[1] signal
+</em># cleanup[1] traceback<br><em># cleanup[1] posix
+</em># cleanup[1] encodings.aliases<br><em># cleanup[1] exceptions
+</em># cleanup[1] _weakref<br><em># cleanup[1] re
+</em># cleanup[1] _locale<br><em># cleanup[1] sre_compile
+</em># cleanup[1] _sre<br><em># cleanup[1] sre_parse
+</em># cleanup[2] copy_reg<br><em># cleanup[2] posixpath
+</em># cleanup[2] errno<br><em># cleanup[2] _abcoll
+</em># cleanup[2] types<br><em># cleanup[2] genericpath
+</em># cleanup[2] stat<br><em># cleanup[2] warnings
+</em># cleanup[2] UserDict<br><em># cleanup[2] os.path
+</em># cleanup[2] linecache<br><em># cleanup[2] os
+</em># cleanup sys<br><em># cleanup <strong>builtin</strong>
+</em># cleanup ints: 860 unfreed ints<br><em># cleanup floats
+</em>zhangjunxiaodeMacBook-Pro:~ junxiaozhang$ ls<br><em>Applications        Movies            android            workSpace_Eclipse
+</em>Desktop            Music            data            www<br><em>Documents        Pictures        document
+</em>Downloads        Public            home<br><em>Library            WeFlow_workspace    soft
+</em>zhangjunxiaodeMacBook-Pro:~ junxiaozhang$ cd www/<br><em>.DS_Store              .tmtworkflowrc         javaScript_workspace/  weixin-little-program/
+</em>.bowerrc               advanced/              phpinfo.php            workflow-workspace/<br><em>.idea/                 basic/                 python_workspace/      youwa-h5/
+</em>zhangjunxiaodeMacBook-Pro:~ junxiaozhang$ cd www/python_workspace/<br><em>.idea/         exchange_rate/
+</em>zhangjunxiaodeMacBook-Pro:~ junxiaozhang$ cd www/python_workspace/<br><em>.idea/         exchange_rate/
+</em>zhangjunxiaodeMacBook-Pro:~ junxiaozhang$ cd www/python_workspace/exchange_rate/<br><em>.git/       .gitignore  .idea/      CHs_book/   README.md   hack/       source/
+</em>zhangjunxiaodeMacBook-Pro:~ junxiaozhang$ cd www/python_workspace/exchange_rate/<br><em>.git/       .gitignore  .idea/      CHs_book/   README.md   hack/       source/
+</em>zhangjunxiaodeMacBook-Pro:~ junxiaozhang$ cd www/python_workspace/exchange_rate/<br><em>zhangjunxiaodeMacBook-Pro:exchange_rate junxiaozhang$ python -help
+</em>Unknown option: -e<br><em>usage: python [option] … [-c cmd | -m mod | file | -] [arg] …
+</em>Try `python -h’ for more information.<br><em>zhangjunxiaodeMacBook-Pro:exchange_rate junxiaozhang$ python help
+</em>python: can’t open file ‘help’: [Errno 2] No such file or directory<br><em>zhangjunxiaodeMacBook-Pro:exchange_rate junxiaozhang$ python version
+</em>python: can’t open file ‘version’: [Errno 2] No such file or directory<br><em>zhangjunxiaodeMacBook-Pro:exchange_rate junxiaozhang$ python -V
+</em>Python 2.7.10<br><em>zhangjunxiaodeMacBook-Pro:exchange_rate junxiaozhang$ python
+</em>Python 2.7.10 (default, Jul 30 2016, 18:31:42)<br><em>[GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.34)] on darwin
+</em>Type “help”, “copyright”, “credits” or “license” for more information.<br><em>&gt;&gt;&gt; import os
+</em>&gt;&gt;&gt; help(os)<br>*</p>
+<ul>
+<li>O_NONBLOCK = 4</li>
+<li>O_RDONLY = 0</li>
+<li>O_RDWR = 2</li>
+<li>O_SHLOCK = 16</li>
+<li>O_SYNC = 128</li>
+<li>O_TRUNC = 1024</li>
+<li>O_WRONLY = 1</li>
+<li>R_OK = 4</li>
+<li>SEEK_CUR = 1</li>
+<li>SEEK_END = 2</li>
+<li>SEEK_SET = 0</li>
+<li>TMP_MAX = 308915776</li>
+<li>WCONTINUED = 16</li>
+<li>WNOHANG = 1</li>
+<li>WUNTRACED = 2</li>
+<li>W_OK = 2</li>
+<li>X_OK = 1</li>
+<li><strong>all</strong> = [‘altsep’, ‘curdir’, ‘pardir’, ‘sep’, ‘extsep’, ‘pathsep’, ‘…</li>
+<li>altsep = None</li>
+<li>confstr_names = {‘CS_DARWIN_USER_CACHE_DIR’: 65538, ‘CS_DARWIN_USER_DI…</li>
+<li>curdir = ‘.’</li>
+<li>defpath = ‘:/bin:/usr/bin’</li>
+<li>devnull = ‘/dev/null’</li>
+<li>environ = {‘VERSIONER_PYTHON_PREFER_32_BIT’: ‘no’, ‘LC_CTY…junxiaozh…</li>
+<li>extsep = ‘.’</li>
+<li>linesep = ‘\n’</li>
+<li>name = ‘posix’</li>
+<li>pardir = ‘..’</li>
+<li>pathconf_names = {‘PC_ASYNC_IO’: 17, ‘PC_CHOWN_RESTRICTED’: 7, ‘PC_FIL…</li>
+<li>pathsep = ‘:’</li>
+<li>sep = ‘/‘</li>
+<li>sysconf_names = {‘SC_2_CHAR_TERM’: 20, ‘SC_2_C_BIND’: 18, ‘SC_2_C_DEV’…</li>
+</ul>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-mac-下查看端口占用" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -671,297 +1016,6 @@
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swift-mapkit/">Swift mapkit</a></li></ul>
 	</div>
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-实用方法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/09/实用方法/" class="article-date">
-  	<time datetime="2016-07-08T23:45:25.000Z" itemprop="datePublished">2016-07-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/09/实用方法/">实用方法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="触摸背景关闭键盘"><a href="#触摸背景关闭键盘" class="headerlink" title="触摸背景关闭键盘"></a>触摸背景关闭键盘</h4><p>使用Interface Builder 更改容器视图(view)的所属类，从UIView改为UIControl。容器视图指向storyboard中的一个UIView实例。<br><br>将 容器视图的 TouchDown 事件关联到下面的方法。<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@<span class="type">IBACtion</span> <span class="function"><span class="keyword">func</span> <span class="title">backGroundTap</span><span class="params">(sender: UIControl)</span></span>&#123;</div><div class="line">  nameFiled.resignFristResponder()</div><div class="line">  <span class="type">NumberFiled</span>.resignFristResponder()</div><div class="line">  <span class="comment">//所有在容器视图上的组件放弃第一响应者</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4 id="四舍五入lroundf"><a href="#四舍五入lroundf" class="headerlink" title="四舍五入lroundf()"></a>四舍五入lroundf()</h4><h4 id="实现操作表单和警告视图"><a href="#实现操作表单和警告视图" class="headerlink" title="实现操作表单和警告视图"></a>实现操作表单和警告视图</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">@<span class="type">IBACtion</span> <span class="function"><span class="keyword">func</span> <span class="title">buttonPress</span><span class="params">(sender: UIButton)</span></span>&#123;</div><div class="line">  <span class="keyword">let</span> controller = <span class="type">UIAlertController</span>(title: <span class="string">"zzzzz"</span>,message: <span class="literal">nil</span>,preferredStyle: .<span class="type">ActionSheet</span>)</div><div class="line">  <span class="keyword">let</span> yesAction = <span class="type">UIAlertAction</span>(title: <span class="string">"zzzzz"</span>,style: .<span class="type">Destructive</span>,handler:&#123; action <span class="keyword">in</span></div><div class="line">    <span class="keyword">let</span> msg = <span class="keyword">self</span>.nameField.text.isEmpty ? <span class="string">"zzzz"</span> : <span class="string">"zzzzz"</span></div><div class="line">    <span class="keyword">let</span> controller2 = <span class="type">UIAlertController</span>(title: <span class="string">"Cancel"</span>,message: msg,preferredStyle: .<span class="type">Alert</span>)</div><div class="line">    <span class="keyword">let</span> cancel  = <span class="type">UIAlertAction</span>(title: <span class="string">"zzzzz"</span>,style: .<span class="type">Cancel</span>,handler:<span class="literal">nil</span>)</div><div class="line">    controller2.addAction(cancel)</div><div class="line">    <span class="keyword">self</span>.presentViewController(controller2,animated: <span class="literal">true</span>,complection: <span class="literal">nil</span>)</div><div class="line">  &#125;)</div><div class="line">  <span class="keyword">let</span> no = <span class="type">UIAlertAction</span>(title: <span class="string">"no"</span>,style: .<span class="type">Cancel</span>,handler:<span class="literal">nil</span>)</div><div class="line">  controller.addAction(yesAction)</div><div class="line">  controller.addAction(no)</div><div class="line">  <span class="comment">//为了让警告视图或者操作表单显示出来需要让当前视图控制器来展示警告视图</span></div><div class="line">  <span class="comment">//  获取警告控制器的悬浮展示控制器</span></div><div class="line">  <span class="keyword">if</span> <span class="keyword">let</span> ppc = controller.popoverPresentationController&#123;</div><div class="line">    ppc.sourceView = sender</div><div class="line">    ppc.sourceRect = sender.bounds</div><div class="line">    <span class="comment">//设置警告视图悬浮框在源按钮的方向</span></div><div class="line">    ppc.permittedArrowDirections = .<span class="type">Down</span></div><div class="line">  &#125;</div><div class="line">  <span class="keyword">self</span>.presentViewController(controller,animated: <span class="literal">true</span>,complection: <span class="literal">nil</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="从根视图所属的Storyboard-上加载视图控制器"><a href="#从根视图所属的Storyboard-上加载视图控制器" class="headerlink" title="从根视图所属的Storyboard 上加载视图控制器"></a>从根视图所属的Storyboard 上加载视图控制器</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> viewController = storyboard?.instantiateViewControllerWithIdentifier(<span class="string">"identifier"</span>) <span class="keyword">as</span> <span class="type">UIViewController</span></div></pre></td></tr></table></figure>
-<h4 id="切换视图控制器方法"><a href="#切换视图控制器方法" class="headerlink" title="切换视图控制器方法"></a>切换视图控制器方法</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">switchViewController(from fromVC: <span class="type">UIViewController</span> ,to toVC: <span class="type">UIViewController</span>)&#123;</div><div class="line">  <span class="keyword">if</span> fromVC != <span class="literal">nil</span>&#123;</div><div class="line">    fromVC!.willMovetoParentViewController(<span class="literal">nil</span>)</div><div class="line">    fromVC!.view.removeFromSuperview()</div><div class="line">    fromVC!.removeFromParentViewController()</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> toVC != <span class="literal">nil</span>&#123;</div><div class="line">    <span class="keyword">self</span>.addChildViewController(toVC!)</div><div class="line">    <span class="keyword">self</span>.view.insertSubview(toVC!.view,atIndex: <span class="number">0</span>)</div><div class="line">    toVC!.didMovetoParentViewController(<span class="keyword">self</span>)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="转场过程的动画效果"><a href="#转场过程的动画效果" class="headerlink" title="转场过程的动画效果"></a>转场过程的动画效果</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">@<span class="type">IBACtion</span> <span class="function"><span class="keyword">func</span> <span class="title">buttonPressed</span><span class="params">(sender: UIBarButtonItem)</span></span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">//设置动画步骤如下</span></div><div class="line">    <span class="type">UIView</span>.beginAnimations(<span class="string">"View Flip"</span>,context: <span class="literal">nil</span>)</div><div class="line">    <span class="type">UIView</span>.setAnimationDuration(<span class="number">0.4</span>)</div><div class="line">    <span class="type">UIView</span>.setAnimationCurve(.<span class="type">EaseInOut</span>)</div><div class="line">    <span class="type">UIView</span>.setAnimationTransition(.<span class="type">FlipFromRight</span>,forView: view,cache: <span class="literal">true</span>)</div><div class="line">    <span class="type">UIView</span>.commitAnimations()</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="选取器-UIPickerViewSource-数据源方法"><a href="#选取器-UIPickerViewSource-数据源方法" class="headerlink" title="选取器 UIPickerViewSource 数据源方法"></a>选取器 UIPickerViewSource 数据源方法</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//选取器视图的有几个滚轮组件</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">numberOfComponentsInPickerView</span><span class="params">(<span class="number">_</span> pickerView: UIPickerView)</span></span> -&gt; <span class="type">Int</span></div></pre></td></tr></table></figure>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//选取器视图numberOfRowsInComponent滚轮组件有几行数据</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">pickerView</span><span class="params">(<span class="number">_</span> pickerView: UIPickerView,numberOfRowsInComponent component: Int)</span></span> -&gt; <span class="type">Int</span></div></pre></td></tr></table></figure>
-<h4 id="选取器-UIPickerViewDelegate-委托方法"><a href="#选取器-UIPickerViewDelegate-委托方法" class="headerlink" title="选取器 UIPickerViewDelegate 委托方法"></a>选取器 UIPickerViewDelegate 委托方法</h4><p>Setting the Dimensions of the Picker View<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">optional</span> <span class="function"><span class="keyword">func</span> <span class="title">pickerView</span><span class="params">(<span class="number">_</span> pickerView: UIPickerView,</span></span></div><div class="line"> rowHeightForComponent component: Int) -&gt; <span class="type">CGFloat</span></div><div class="line"></div><div class="line"> <span class="keyword">optional</span> <span class="function"><span class="keyword">func</span> <span class="title">pickerView</span><span class="params">(<span class="number">_</span> pickerView: UIPickerView,</span></span></div><div class="line">     widthForComponent component: Int) -&gt; <span class="type">CGFloat</span></div></pre></td></tr></table></figure></p>
-<p>Setting the Content of Component Rows<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//选取器视图forComponent组件的titleForRow行数据的标题</span></div><div class="line">  <span class="keyword">optional</span> <span class="function"><span class="keyword">func</span> <span class="title">pickerView</span><span class="params">(<span class="number">_</span> pickerView: UIPickerView,</span></span></div><div class="line">             titleForRow row: Int,</div><div class="line">            forComponent component: Int) -&gt; <span class="type">String</span>?</div><div class="line"></div><div class="line">  <span class="keyword">optional</span> <span class="function"><span class="keyword">func</span> <span class="title">pickerView</span><span class="params">(<span class="number">_</span> pickerView: UIPickerView,</span></span></div><div class="line">   attributedTitleForRow row: Int,</div><div class="line">            forComponent component: Int) -&gt; <span class="type">NSAttributedString</span>?</div><div class="line"></div><div class="line">  <span class="keyword">optional</span> <span class="function"><span class="keyword">func</span> <span class="title">pickerView</span><span class="params">(<span class="number">_</span> pickerView: UIPickerView,</span></span></div><div class="line">                        viewForRow row: Int,</div><div class="line">                      forComponent component: Int,</div><div class="line">                       reusingView view: UIView?) -&gt; <span class="type">UIView</span></div></pre></td></tr></table></figure></p>
-<p>Responding to Row Selection<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//选取器视图的选择发生改变时调用，一般用于依赖性的多滚轮结构</span></div><div class="line">  <span class="keyword">optional</span> <span class="function"><span class="keyword">func</span> <span class="title">pickerView</span><span class="params">(<span class="number">_</span> pickerView: UIPickerView,</span></span></div><div class="line">            didSelectRow row: Int,</div><div class="line">             inComponent component: Int)</div></pre></td></tr></table></figure></p>
-<h4 id="从包-bundle-中读取数据"><a href="#从包-bundle-中读取数据" class="headerlink" title="从包(bundle)中读取数据"></a>从包(bundle)中读取数据</h4><p>从属性列表(.plist)中读取数据<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> bundle = <span class="type">NSBundle</span>.mainBundle()</div><div class="line"><span class="keyword">let</span> plistURL = bundle.<span class="type">URLForResource</span>(<span class="string">"statedictionary"</span>, withExtension: <span class="string">"plist"</span>)</div><div class="line">stateZips = <span class="type">NSDictionary</span>(contentsOfURL: plistURL!) <span class="keyword">as</span>! [<span class="type">String</span> : [<span class="type">String</span>]]</div></pre></td></tr></table></figure></p>
-<h4 id="获取ios设备上的所有字体"><a href="#获取ios设备上的所有字体" class="headerlink" title="获取ios设备上的所有字体"></a>获取ios设备上的所有字体</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//必须在该委托方法下调用</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">application</span><span class="params">(<span class="number">_</span> application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?)</span></span> -&gt; <span class="type">Bool</span> &#123;</div><div class="line">    <span class="comment">// Override point for customization after application launch.</span></div><div class="line">    <span class="comment">//可以在这里重载应用启动后的自定义代码</span></div><div class="line">    <span class="keyword">for</span> family <span class="keyword">in</span> <span class="type">UIFont</span>.familyNames() <span class="keyword">as</span> [<span class="type">String</span>]&#123;</div><div class="line">      <span class="built_in">print</span>(family)</div><div class="line">      <span class="keyword">for</span> font <span class="keyword">in</span> <span class="type">UIFont</span>.fontNamesForFamilyName(family)&#123; </div><div class="line">        <span class="built_in">print</span>(<span class="string">"<span class="subst">\(font)</span>"</span>)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="随机数"><a href="#随机数" class="headerlink" title="随机数"></a>随机数</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> selectedComponent <span class="keyword">in</span> <span class="number">0</span>..&lt;componentNumber &#123;</div><div class="line">            <span class="comment">//获取随机数</span></div><div class="line">            <span class="keyword">let</span> newValue = <span class="type">Int</span>(arc4random_uniform(<span class="type">UInt32</span>(images.<span class="built_in">count</span>)))</div><div class="line"><span class="comment">//            if newValue == lastValue &#123;</span></div><div class="line"><span class="comment">//                numberInRow += 1</span></div><div class="line"><span class="comment">//            &#125;else&#123;</span></div><div class="line"><span class="comment">//                numberInRow = 0</span></div><div class="line"><span class="comment">//            &#125;</span></div><div class="line"><span class="comment">//            lastValue = newValue</span></div><div class="line">            valuesInRow.append(newValue)</div><div class="line">            customPickerData.selectRow(newValue, inComponent: selectedComponent, animated: <span class="literal">true</span>)</div><div class="line">            customPickerData.reloadComponent(selec</div></pre></td></tr></table></figure>
-<h4 id="播放声音"><a href="#播放声音" class="headerlink" title="播放声音"></a>播放声音</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">var</span> winSoundID:<span class="type">SystemSoundID</span> = <span class="number">0</span></div><div class="line"><span class="keyword">private</span> <span class="keyword">var</span> crunchSoundID:<span class="type">SystemSoundID</span> = <span class="number">0</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">playWInSound</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="comment">//有效的声音标识符不会为0 ，如果为零就是还未创建</span></div><div class="line">    <span class="keyword">if</span> winSoundID == <span class="number">0</span> &#123;</div><div class="line">        <span class="keyword">let</span> soundURL = <span class="type">NSBundle</span>.mainBundle().<span class="type">URLForResource</span>(<span class="string">"win"</span>, withExtension: <span class="string">"wav"</span>)! <span class="keyword">as</span> <span class="type">CFURL</span></div><div class="line">        <span class="type">AudioServicesCreateSystemSoundID</span>(soundURL, &amp;winSoundID)<span class="comment">//这步结束之后 winSoundID不会为0</span></div><div class="line">    &#125;</div><div class="line">    <span class="type">AudioServicesPlaySystemSound</span>(winSoundID)</div><div class="line">    winLaber.text = <span class="string">"Winner!!!"</span></div><div class="line"></div><div class="line">    dispatch_after(dispatch_time(<span class="type">DISPATCH_TIME_NOW</span>, <span class="type">Int64</span>(<span class="number">1.5</span>*<span class="type">Double</span>(<span class="type">NSEC_PER_SEC</span>))), dispatch_get_main_queue(), &#123;</div><div class="line">        <span class="keyword">self</span>.buttonShow()</div><div class="line">        &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swift/">Swift</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-知识汇总" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/08/知识汇总/" class="article-date">
-  	<time datetime="2016-07-08T15:45:36.000Z" itemprop="datePublished">2016-07-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/08/知识汇总/">知识点汇总</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="零散知识点"><a href="#零散知识点" class="headerlink" title="零散知识点"></a>零散知识点</h4><blockquote>
-<ol>
-<li><strong> .nib(二进制文件）与.xib（基于XML的衍生格式） </strong> 是Interface Builder 支持的不同文件类型<blockquote>
-<ol>
-<li>每个nib文件可以包含任意数量的对象，但在iOS项目中，每个nib文件通常只包含一个视图以及相关联的控制器或者对象。</li>
-<li>Interface Builder还支持：storyBoard.</li>
-<li>stroyBoard与nib文件的区别：<blockquote>
-<p>1.nib文件一次加载所有内容<br>2.storyBoard不会一次加载所有的内容，需要在加载某视图和控制器的时候向他请求特定的内容。</p>
-</blockquote>
-</li>
-</ol>
-</blockquote>
-</li>
-<li>app图标的像素的大小(.png)：180＊180、120＊120、87＊87、80＊80、58＊58。在屏幕上使用自定义的图标：普通屏幕24*24，Retina屏使用双倍分辨率，iPhone6plus 使用3倍分辨率。</li>
-<li>@IBOutlet与 @IBAction</li>
-<li>委托： 负责为其他对象处理特定任务的对象，应用程序委托： AppDelegate.m(.h.swift) ,能够在某些预定义的时间点为UIApplication类做一些事情。每个ios应用都有且仅有一个UIApplication类的实例。</li>
-<li>控件的<strong>(UIControlState)4种状态</strong>：Normal、HighLighted、Disabled、Selected</li>
-<li><strong>UIAlertActionStyle的三种类型</strong>：Destructive、Default、Cancel</li>
-<li>点(Point)、像素(pixel)、Retina显示屏：1point = (n＊1piexl)＊(n＊1piexl)。n 为Retina显示屏的店放大倍数，iPhone5S（2），iPhone6S（接近3）</li>
-<li>尺寸分类</li>
-<li>多视图的常见类型：基于标签栏(tab bar)(UITabBarController)、基于导航拦(UINavigationController)、基于工具栏</li>
-<li>选取器视图(picker view):</li>
-<li><strong>数据源</strong>是<strong>控制器</strong>的一部分，虽然可以用于保存数据，但真实作用是从模型中检索数据，并传递给视图。</li>
-<li><strong>注释</strong>：//MARK:- 、//MARK: Picker Data Source Methods  在编辑器面板顶部的方法和函数弹出菜单中插入一条分隔线与一个文本条目。在方法之前添加／<em>*  … </em>/ 为函数的方法注释，会在快速帮助面板显示。</li>
-</ol>
-</blockquote>
-<h4 id="尺寸分类"><a href="#尺寸分类" class="headerlink" title="尺寸分类"></a>尺寸分类</h4><table>
-<thead>
-<tr>
-<th>宽度</th>
-<th style="text-align:center">高度</th>
-<th style="text-align:right">设备及其方向</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>紧凑</td>
-<td style="text-align:center">紧凑</td>
-<td style="text-align:right">除iPhone6plus之后的之外的所有横屏IPhone</td>
-</tr>
-<tr>
-<td>紧凑</td>
-<td style="text-align:center">标准</td>
-<td style="text-align:right">所有竖屏的Iphone</td>
-</tr>
-<tr>
-<td>标准</td>
-<td style="text-align:center">紧凑</td>
-<td style="text-align:right">横屏iPhone6plus</td>
-</tr>
-<tr>
-<td>标准</td>
-<td style="text-align:center">标准</td>
-<td style="text-align:right">横屏和竖屏的Ipad</td>
-</tr>
-</tbody>
-</table>
-<h4 id="输出接口与操作方法"><a href="#输出接口与操作方法" class="headerlink" title="输出接口与操作方法"></a>输出接口与操作方法</h4><h5 id="IBOutlet"><a href="#IBOutlet" class="headerlink" title="@IBOutlet"></a>@IBOutlet</h5><p>控制器类通过输出接口来引用storyBoard或者nib文件中的对象<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@IBOutlet</span> <span class="keyword">var</span> button: <span class="type">UIButtopn</span>!</div></pre></td></tr></table></figure></p>
-<h5 id="IBAction"><a href="#IBAction" class="headerlink" title="@IBAction"></a>@IBAction</h5><p>用@IBAction 修饰的方法名为<strong>操作方法</strong>，操作方法告诉Interface Builder这个方法可以背storyboard活着nib文件中的控件触发。<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">doSomething</span><span class="params">(sender: AnyObject)</span></span>&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4 id="所有遇到的类"><a href="#所有遇到的类" class="headerlink" title="所有遇到的类"></a>所有遇到的类</h4><blockquote>
-<ul>
-<li>UIButton</li>
-<li>UILabel</li>
-<li>UIViewController</li>
-<li>UIView</li>
-<li>UIControlState 控件状态 .Normal</li>
-<li>NSString</li>
-<li>NSLayoutConstraint 布局约束</li>
-<li>NSAttributedString 字符串属性 对字符串附加格式信息，例如：字体和段落对齐</li>
-<li>NSMutableAttributedString</li>
-<li>NSFontAttributeName</li>
-</ul>
-</blockquote>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">buttonPress</span><span class="params">(sender: UIButton)</span></span>&#123;</div><div class="line">  <span class="keyword">let</span> title = sender.titleForState(.<span class="type">Normal</span>)</div><div class="line">  <span class="keyword">let</span> plainText = <span class="string">"<span class="subst">\(title)</span> button Pressed"</span></div><div class="line">  <span class="keyword">let</span> styleText = <span class="type">NSMutableAttributedString</span>(string: plainText)</div><div class="line">  <span class="keyword">let</span> attributes = [<span class="type">NSFontAttributeName</span> : <span class="type">UIFont</span>.boldSystemFontOfSize(statusLabel.font.pointSize)]</div><div class="line">  <span class="keyword">let</span> nameRange = (plainText <span class="keyword">as</span>! <span class="type">NSString</span>).rangOfString(title)</div><div class="line">  styledText.setAttributes(attributes,range: nameRange)</div><div class="line">  statusLabel.attributeText = styledText</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>UIResponder</li>
-<li>UIApplicationDelegate</li>
-</ul>
-</blockquote>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> UIKit</div><div class="line"></div><div class="line"><span class="meta">@UIApplicationMain</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppDelegate</span>: <span class="title">UIResponder</span>, <span class="title">UIApplicationDelegate</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> window: <span class="type">UIWindow</span>?</div><div class="line"></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">application</span><span class="params">(<span class="number">_</span> application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?)</span></span> -&gt; <span class="type">Bool</span> &#123;</div><div class="line">        <span class="comment">// Override point for customization after application launch.</span></div><div class="line">        <span class="comment">//可以在这里重载应用启动后的自定义代码</span></div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">applicationWillResignActive</span><span class="params">(<span class="number">_</span> application: UIApplication)</span></span> &#123;</div><div class="line">        <span class="comment">// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.</span></div><div class="line">        <span class="comment">//应用从活动状态切换到非活动状态会触发这个方法，出现临时中断或者推出应用会触发，程序转为后台运行</span></div><div class="line">        <span class="comment">// Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.</span></div><div class="line">        <span class="comment">//可以在这个方法中暂停正在运行的任务，禁用定时器，和降低OPenGL ES帧率。如果是游戏应用可以在这个方法里暂停游戏</span></div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">applicationDidEnterBackground</span><span class="params">(<span class="number">_</span> application: UIApplication)</span></span> &#123;</div><div class="line">        <span class="comment">// Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.</span></div><div class="line">        <span class="comment">//释放公用资源、保存用户数据、取消定时器、尽量存储应用程序状态信息。</span></div><div class="line">        <span class="comment">// If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.</span></div><div class="line"></div><div class="line">        <span class="comment">//如果应用程序支持后台运行则用户退出时调用这个方法而不是applicationWillTerminrate方法</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">applicationWillEnterForeground</span><span class="params">(<span class="number">_</span> application: UIApplication)</span></span> &#123;</div><div class="line">        <span class="comment">// Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.</span></div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">applicationDidBecomeActive</span><span class="params">(<span class="number">_</span> application: UIApplication)</span></span> &#123;</div><div class="line">        <span class="comment">// Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.</span></div><div class="line">        <span class="comment">//</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">applicationWillTerminate</span><span class="params">(<span class="number">_</span> application: UIApplication)</span></span> &#123;</div><div class="line">        <span class="comment">// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>UIControl</li>
-<li>UIAlertController</li>
-<li>UIAlertAction</li>
-<li>UIPopoverArrowDirection</li>
-<li>UIInterfaceOrientationMask 屏幕支持方向标记类</li>
-<li>UIViewController</li>
-<li>UIViewAnimationTransition 动画转场的类型类</li>
-<li>UIImage</li>
-<li>NSDate</li>
-<li>NSDateFormatter</li>
-<li>UIPickerViewDelegate,UIPickerViewSource<br>*</li>
-</ul>
-</blockquote>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swift/">Swift</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-用户界面——各种容器及组件的设置方法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/18/用户界面——各种容器及组件的设置方法/" class="article-date">
-  	<time datetime="2016-06-17T20:21:34.000Z" itemprop="datePublished">2016-06-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/18/用户界面——各种容器及组件的设置方法/">用户界面——各种容器及组件的设置方法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="关闭键盘"><a href="#关闭键盘" class="headerlink" title="关闭键盘"></a>关闭键盘</h2><h3 id="1-按下键盘上的Done按钮关闭键盘"><a href="#1-按下键盘上的Done按钮关闭键盘" class="headerlink" title="1. 按下键盘上的Done按钮关闭键盘"></a>1. 按下键盘上的Done按钮关闭键盘</h3><blockquote>
-<ol>
-<li>用户按下键盘上的Done按钮的时，会产生一个<em>Did End On Exit</em> 事件，此时需要让文本框交出控制权，以关闭键盘</li>
-<li>将键盘的Did End On Exit 事件关联到下方的方法上</li>
-</ol>
-<p>Swift:<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">  <span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">textFieldDoneEditing</span><span class="params">(sender: UITextField)</span></span>&#123;</div><div class="line">  sender.resignFristResponder()</div><div class="line">  &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
-<p>Objc<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">  -(IBAction)textFieldEDoneEditing:(id)sender&#123;</div><div class="line">  [sender resignFirstResponder];</div><div class="line">  &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="2-触摸背景关闭键盘"><a href="#2-触摸背景关闭键盘" class="headerlink" title="2. 触摸背景关闭键盘"></a>2. 触摸背景关闭键盘</h3><blockquote>
-<ol>
-<li>用户触摸背景时，会出发<em>Touch Down</em>事件，此时需要让文本框或者数字框交出控制权，以关闭键盘</li>
-<li>将键盘的Did End On Exit 事件关联到下方的方法上</li>
-</ol>
-<p>Swift:<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">  <span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">backgroundTap</span><span class="params">(sender: UITextField)</span></span>&#123;</div><div class="line">    <span class="comment">//  此时的sender 是 UIControl</span></div><div class="line">    nameField.resignFristResponder()</div><div class="line">    numberField.resignFristResponder()</div><div class="line">    &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
-<p>Objc<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">  -(IBAction)textFieldEDoneEditing:(id)sender&#123;</div><div class="line">  [self.nameField resignFirstResponder];</div><div class="line">  [self.numberField resignFirstResponder];</div><div class="line">  &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
-</blockquote>
-<h2 id="实现操作表单-action-sheet-和警告视图-alert"><a href="#实现操作表单-action-sheet-和警告视图-alert" class="headerlink" title="实现操作表单(action sheet)和警告视图(alert)"></a>实现操作表单(action sheet)和警告视图(alert)</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">buttonPressed</span><span class="params">(sender: UIButton)</span></span>&#123;</div><div class="line">  <span class="keyword">let</span> controller = <span class="type">UIAlertController</span>(title: <span class="string">"Are you sure?"</span>,message: <span class="literal">nil</span>,preferedStyle: .<span class="type">ActionSheet</span>)</div><div class="line"></div><div class="line">  <span class="keyword">let</span> yesACtion = <span class="type">UIAlertAction</span>(title: <span class="string">"yes,I`m sure"</span>,style: .<span class="type">Desturction</span>,handler: &#123; action <span class="keyword">in</span></div><div class="line">    <span class="keyword">let</span> msg = <span class="keyword">self</span>.nameField.text.isEmpty ? <span class="string">"you can breathe easy"</span> : <span class="string">"OK"</span></div><div class="line">    <span class="keyword">let</span> controller2 = <span class="type">UIAlertController</span>(title: <span class="string">"Done"</span>,message: mag,preferedStyle: .<span class="type">Alert</span>)</div><div class="line">    <span class="keyword">let</span> cancelAction = <span class="type">UIAlertAction</span>(title: <span class="string">"cancel"</span>,style: .<span class="type">Cancel</span>,handle: <span class="literal">nil</span>)</div><div class="line">    controller2.addAction(cancelAction)</div><div class="line"></div><div class="line">    <span class="keyword">self</span>.presentViewController(controller2,animated: <span class="literal">true</span>,completion: <span class="literal">nil</span>)</div><div class="line">  &#125;)</div><div class="line"></div><div class="line">  <span class="keyword">let</span> noAction = <span class="type">UIAlertAction</span>(title: <span class="string">"no"</span>,style: .<span class="type">Cancel</span>,handle: <span class="literal">nil</span>)</div><div class="line">  controller.addAction(yesACtion)</div><div class="line">  controller.addAction(noAction)</div><div class="line"></div><div class="line">    <span class="keyword">self</span>.presentViewController(controller,animated: <span class="literal">true</span>,completion: <span class="literal">nil</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
       
 
       
