@@ -113,7 +113,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/NFC/" style="font-size: 10px;">NFC</a> <a href="/tags/PHP/" style="font-size: 13.33px;">PHP</a> <a href="/tags/Swift/" style="font-size: 13.33px;">Swift</a> <a href="/tags/Swift-mapkit/" style="font-size: 10px;">Swift mapkit</a> <a href="/tags/blog主题设置/" style="font-size: 10px;">blog主题设置</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/yii框架/" style="font-size: 13.33px;">yii框架</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/芒果的个人信息/" style="font-size: 10px;">芒果的个人信息</a> <a href="/tags/装修风格/" style="font-size: 20px;">装修风格</a>
+						<a href="/tags/NFC/" style="font-size: 10px;">NFC</a> <a href="/tags/PHP/" style="font-size: 13.33px;">PHP</a> <a href="/tags/Swift/" style="font-size: 13.33px;">Swift</a> <a href="/tags/Swift-mapkit/" style="font-size: 10px;">Swift mapkit</a> <a href="/tags/blog主题设置/" style="font-size: 10px;">blog主题设置</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/yii框架/" style="font-size: 13.33px;">yii框架</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/树莓派/" style="font-size: 10px;">树莓派</a> <a href="/tags/芒果的个人信息/" style="font-size: 10px;">芒果的个人信息</a> <a href="/tags/装修风格/" style="font-size: 20px;">装修风格</a>
 					</div>
 				</section>
 				
@@ -198,6 +198,63 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-远程访问树莓派-ssh" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/24/远程访问树莓派-ssh/" class="article-date">
+  	<time datetime="2017-04-24T01:16:59.000Z" itemprop="datePublished">2017-04-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/24/远程访问树莓派-ssh/">远程访问树莓派:ssh</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="远程访问树莓派"><a href="#远程访问树莓派" class="headerlink" title="远程访问树莓派"></a>远程访问树莓派</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment"># coding=utf-8</span></div><div class="line"><span class="comment"># coding:utf-8  #强制使用utf-8编码格式</span></div><div class="line"><span class="keyword">import</span> smtplib  <span class="comment"># 加载smtplib模块</span></div><div class="line"><span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText</div><div class="line"><span class="keyword">from</span> email.utils <span class="keyword">import</span> formataddr</div><div class="line"><span class="keyword">import</span> os</div><div class="line"></div><div class="line">my_sender = <span class="string">'XXX'</span>  <span class="comment"># 发件人邮箱账号，为了后面易于维护，所以写成了变量</span></div><div class="line">my_user = <span class="string">'XXX'</span>  <span class="comment"># 收件人邮箱账号，为了后面易于维护，所以写成了变量</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">mail</span><span class="params">()</span>:</span></div><div class="line">    ret = <span class="keyword">True</span></div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="comment">#公网IP查询接口</span></div><div class="line">        ipStr = os.popen(<span class="string">"curl members.3322.org/dyndns/getip"</span>)</div><div class="line">        msg = MIMEText(ipStr.read(), <span class="string">'plain'</span>, <span class="string">'utf-8'</span>)</div><div class="line">        msg[<span class="string">'From'</span>] = formataddr([<span class="string">"XXX"</span>, my_sender])  <span class="comment"># 括号里的对应发件人邮箱昵称、发件人邮箱账号</span></div><div class="line">        msg[<span class="string">'To'</span>] = formataddr([<span class="string">"XXX"</span>, my_user])  <span class="comment"># 括号里的对应收件人邮箱昵称、收件人邮箱账号</span></div><div class="line">        msg[<span class="string">'Subject'</span>] = <span class="string">"IP地址实时更换"</span>  <span class="comment"># 邮件的主题，也可以说是标题</span></div><div class="line"></div><div class="line">        server = smtplib.SMTP(<span class="string">"smtp.XXXX.com"</span>, <span class="number">25</span>)  <span class="comment"># 发件人邮箱中的SMTP服务器，端口是25</span></div><div class="line">        server.login(my_sender, <span class="string">"邮箱密码"</span>)  <span class="comment"># 括号中对应的是发件人邮箱账号、邮箱密码</span></div><div class="line">        server.sendmail(my_sender, [my_user, ], msg.as_string())  <span class="comment"># 括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件</span></div><div class="line">        server.quit()  <span class="comment"># 这句是关闭连接的意思</span></div><div class="line">    <span class="keyword">except</span> Exception:  <span class="comment"># 如果try中的语句没有执行，则会执行下面的ret=False</span></div><div class="line">        ret = <span class="keyword">False</span></div><div class="line">    <span class="keyword">return</span> ret</div><div class="line"></div><div class="line">ret = mail()</div><div class="line"><span class="keyword">if</span> ret:</div><div class="line">    print(<span class="string">"ok"</span>)  <span class="comment"># 如果发送成功则会返回ok，稍等20秒左右就可以收到邮件</span></div><div class="line"><span class="keyword">else</span>:</div><div class="line">    print(<span class="string">"filed"</span>)  <span class="comment"># 如果发送失败则会返回filed</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/树莓派/">树莓派</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-地中海" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -695,63 +752,6 @@
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-mysql-while-循环-性能测试-具体用法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/02/08/mysql-while-循环-性能测试-具体用法/" class="article-date">
-  	<time datetime="2017-02-08T01:52:47.000Z" itemprop="datePublished">2017-02-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/08/mysql-while-循环-性能测试-具体用法/">mysql while 循环 性能测试 具体用法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="while-循环使用方法"><a href="#while-循环使用方法" class="headerlink" title="while 循环使用方法"></a>while 循环使用方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">delimiter $ -- 定义结束符为 $</div><div class="line">drop procedure if exists pro; --删除存储过程</div><div class="line">create procedure pro()   --创建存储过程</div><div class="line">begin</div><div class="line">declare i int;</div><div class="line">set i = 0;</div><div class="line">WHILE i&lt;11 do --循环次数</div><div class="line"> select * from tweet; --需要修改 对比的测试语句</div><div class="line"> set i = i+1;</div><div class="line">end WHILE;</div><div class="line">end</div><div class="line">$  --结束</div><div class="line"></div><div class="line">call pro(); --调用存储过程</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
 	</div>
 
       

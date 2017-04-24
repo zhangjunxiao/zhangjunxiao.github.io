@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>mysql while 循环 性能测试 具体用法 | 张俊啸的博客</title>
+  <title>远程访问树莓派:ssh | 张俊啸的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="while 循环使用方法1234567891011121314delimiter $ -- 定义结束符为 $drop procedure if exists pro; --删除存储过程create procedure pro()   --创建存储过程begindeclare i int;set i = 0;WHILE i&amp;lt;11 do --循环次数 select * from tweet; -">
+  <meta name="description" content="远程访问树莓派12345678910111213141516171819202122232425262728293031323334#!/usr/bin/python# coding=utf-8# coding:utf-8  #强制使用utf-8编码格式import smtplib  # 加载smtplib模块from email.mime.text import MIMETextfrom ema">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql while 循环 性能测试 具体用法">
-<meta property="og:url" content="http://zhangjunxiao.github.io.git/2017/02/08/mysql-while-循环-性能测试-具体用法/index.html">
+<meta property="og:title" content="远程访问树莓派:ssh">
+<meta property="og:url" content="http://zhangjunxiao.github.io.git/2017/04/24/远程访问树莓派-ssh/index.html">
 <meta property="og:site_name" content="张俊啸的博客">
-<meta property="og:description" content="while 循环使用方法1234567891011121314delimiter $ -- 定义结束符为 $drop procedure if exists pro; --删除存储过程create procedure pro()   --创建存储过程begindeclare i int;set i = 0;WHILE i&amp;lt;11 do --循环次数 select * from tweet; -">
-<meta property="og:updated_time" content="2017-02-08T01:57:13.000Z">
+<meta property="og:description" content="远程访问树莓派12345678910111213141516171819202122232425262728293031323334#!/usr/bin/python# coding=utf-8# coding:utf-8  #强制使用utf-8编码格式import smtplib  # 加载smtplib模块from email.mime.text import MIMETextfrom ema">
+<meta property="og:updated_time" content="2017-04-24T01:21:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql while 循环 性能测试 具体用法">
-<meta name="twitter:description" content="while 循环使用方法1234567891011121314delimiter $ -- 定义结束符为 $drop procedure if exists pro; --删除存储过程create procedure pro()   --创建存储过程begindeclare i int;set i = 0;WHILE i&amp;lt;11 do --循环次数 select * from tweet; -">
+<meta name="twitter:title" content="远程访问树莓派:ssh">
+<meta name="twitter:description" content="远程访问树莓派12345678910111213141516171819202122232425262728293031323334#!/usr/bin/python# coding=utf-8# coding:utf-8  #强制使用utf-8编码格式import smtplib  # 加载smtplib模块from email.mime.text import MIMETextfrom ema">
   
     <link rel="alternative" href="/atom.xml" title="张俊啸的博客" type="application/atom+xml">
   
@@ -201,11 +201,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-mysql-while-循环-性能测试-具体用法" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-远程访问树莓派-ssh" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/02/08/mysql-while-循环-性能测试-具体用法/" class="article-date">
-  	<time datetime="2017-02-08T01:52:47.000Z" itemprop="datePublished">2017-02-08</time>
+      <a href="/2017/04/24/远程访问树莓派-ssh/" class="article-date">
+  	<time datetime="2017-04-24T01:16:59.000Z" itemprop="datePublished">2017-04-24</time>
 </a>
     </div>
   
@@ -218,7 +218,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      mysql while 循环 性能测试 具体用法
+      远程访问树莓派:ssh
     </h1>
   
 
@@ -227,7 +227,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/树莓派/">树莓派</a></li></ul>
 	</div>
 
         
@@ -238,7 +238,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="while-循环使用方法"><a href="#while-循环使用方法" class="headerlink" title="while 循环使用方法"></a>while 循环使用方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">delimiter $ -- 定义结束符为 $</div><div class="line">drop procedure if exists pro; --删除存储过程</div><div class="line">create procedure pro()   --创建存储过程</div><div class="line">begin</div><div class="line">declare i int;</div><div class="line">set i = 0;</div><div class="line">WHILE i&lt;11 do --循环次数</div><div class="line"> select * from tweet; --需要修改 对比的测试语句</div><div class="line"> set i = i+1;</div><div class="line">end WHILE;</div><div class="line">end</div><div class="line">$  --结束</div><div class="line"></div><div class="line">call pro(); --调用存储过程</div></pre></td></tr></table></figure>
+        <h3 id="远程访问树莓派"><a href="#远程访问树莓派" class="headerlink" title="远程访问树莓派"></a>远程访问树莓派</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment"># coding=utf-8</span></div><div class="line"><span class="comment"># coding:utf-8  #强制使用utf-8编码格式</span></div><div class="line"><span class="keyword">import</span> smtplib  <span class="comment"># 加载smtplib模块</span></div><div class="line"><span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText</div><div class="line"><span class="keyword">from</span> email.utils <span class="keyword">import</span> formataddr</div><div class="line"><span class="keyword">import</span> os</div><div class="line"></div><div class="line">my_sender = <span class="string">'XXX'</span>  <span class="comment"># 发件人邮箱账号，为了后面易于维护，所以写成了变量</span></div><div class="line">my_user = <span class="string">'XXX'</span>  <span class="comment"># 收件人邮箱账号，为了后面易于维护，所以写成了变量</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">mail</span><span class="params">()</span>:</span></div><div class="line">    ret = <span class="keyword">True</span></div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="comment">#公网IP查询接口</span></div><div class="line">        ipStr = os.popen(<span class="string">"curl members.3322.org/dyndns/getip"</span>)</div><div class="line">        msg = MIMEText(ipStr.read(), <span class="string">'plain'</span>, <span class="string">'utf-8'</span>)</div><div class="line">        msg[<span class="string">'From'</span>] = formataddr([<span class="string">"XXX"</span>, my_sender])  <span class="comment"># 括号里的对应发件人邮箱昵称、发件人邮箱账号</span></div><div class="line">        msg[<span class="string">'To'</span>] = formataddr([<span class="string">"XXX"</span>, my_user])  <span class="comment"># 括号里的对应收件人邮箱昵称、收件人邮箱账号</span></div><div class="line">        msg[<span class="string">'Subject'</span>] = <span class="string">"IP地址实时更换"</span>  <span class="comment"># 邮件的主题，也可以说是标题</span></div><div class="line"></div><div class="line">        server = smtplib.SMTP(<span class="string">"smtp.XXXX.com"</span>, <span class="number">25</span>)  <span class="comment"># 发件人邮箱中的SMTP服务器，端口是25</span></div><div class="line">        server.login(my_sender, <span class="string">"邮箱密码"</span>)  <span class="comment"># 括号中对应的是发件人邮箱账号、邮箱密码</span></div><div class="line">        server.sendmail(my_sender, [my_user, ], msg.as_string())  <span class="comment"># 括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件</span></div><div class="line">        server.quit()  <span class="comment"># 这句是关闭连接的意思</span></div><div class="line">    <span class="keyword">except</span> Exception:  <span class="comment"># 如果try中的语句没有执行，则会执行下面的ret=False</span></div><div class="line">        ret = <span class="keyword">False</span></div><div class="line">    <span class="keyword">return</span> ret</div><div class="line"></div><div class="line">ret = mail()</div><div class="line"><span class="keyword">if</span> ret:</div><div class="line">    print(<span class="string">"ok"</span>)  <span class="comment"># 如果发送成功则会返回ok，稍等20秒左右就可以收到邮件</span></div><div class="line"><span class="keyword">else</span>:</div><div class="line">    print(<span class="string">"filed"</span>)  <span class="comment"># 如果发送失败则会返回filed</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -248,18 +248,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/02/10/python-导入数据库文件/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          python 导入数据库文件
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/12/19/Mac下使用ACR122u-A9-安装及使用/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Mac下使用ACR122u-A9 安装及使用</div>
+    <a href="/2017/04/08/地中海/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">地中海风格 6400张</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -294,7 +285,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="mysql-while-循环-性能测试-具体用法" data-title="mysql while 循环 性能测试 具体用法" data-url="http://zhangjunxiao.github.io.git/2017/02/08/mysql-while-循环-性能测试-具体用法/"></div>
+	<div class="ds-thread" data-thread-key="远程访问树莓派-ssh" data-title="远程访问树莓派:ssh" data-url="http://zhangjunxiao.github.io.git/2017/04/24/远程访问树莓派-ssh/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
